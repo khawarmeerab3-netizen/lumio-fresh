@@ -1,0 +1,330 @@
+{
+  "_note": "NATIVE SPEAKER REVIEW REQUIRED before production. RTL language — dir=rtl required.",
+  "nav": {
+    "dashboard": "ڈیش بورڈ",
+    "today": "آج",
+    "report": "رپورٹ",
+    "coach": "کوچ",
+    "community": "کمیونٹی",
+    "journey": "سفر",
+    "settings": "ترتیبات",
+    "pricing": "قیمتیں",
+    "logout": "لاگ آؤٹ",
+    "back": "واپس"
+  },
+  "auth": {
+    "login": {
+      "title": "لاگ ان",
+      "tagline": "اپنی ترقی کو روشن کریں",
+      "email": "ای میل",
+      "email_placeholder": "آپ@مثال.com",
+      "password": "پاس ورڈ",
+      "password_placeholder": "••••••••",
+      "submit": "لاگ ان کریں",
+      "no_account": "اکاؤنٹ نہیں ہے؟",
+      "create_one": "بنائیں",
+      "forgot_password": "پاس ورڈ بھول گئے؟",
+      "error_invalid": "ای میل یا پاس ورڈ غلط ہے",
+      "error_generic": "کچھ غلط ہوا۔ دوبارہ کوشش کریں۔"
+    },
+    "register": {
+      "title": "اکاؤنٹ بنائیں",
+      "tagline": "اپنی تبدیلی شروع کریں",
+      "name": "آپ کا نام",
+      "name_placeholder": "احمد علی",
+      "email": "ای میل",
+      "email_placeholder": "آپ@مثال.com",
+      "password": "پاس ورڈ",
+      "password_placeholder": "کم از کم ٨ حروف",
+      "submit": "اکاؤنٹ بنائیں",
+      "have_account": "پہلے سے اکاؤنٹ ہے؟",
+      "sign_in": "لاگ ان کریں",
+      "referral_prompt": "ریفرل کوڈ ہے؟",
+      "referral_code": "ریفرل کوڈ",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "آپ {{plan}} کے لیے سائن اپ کر رہے ہیں",
+      "error_exists": "اس ای میل سے اکاؤنٹ پہلے سے موجود ہے",
+      "error_generic": "رجسٹریشن ناکام ہوئی۔ دوبارہ کوشش کریں۔"
+    },
+    "validation": {
+      "email_required": "درست ای میل درج کریں",
+      "password_min": "پاس ورڈ کم از کم ٨ حروف کا ہونا چاہیے",
+      "name_required": "نام ضروری ہے"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "اپنی زبان منتخب کریں",
+      "subtitle": "لوميو آپ کی زبان میں مکمل ترجمہ ہوگا"
+    },
+    "quiz": {
+      "title": "آپ کا سفر ذاتی بنائیں",
+      "subtitle": "آپ کا بہترین چیلنج بنانے کے لیے ٥ سوالات",
+      "step_of": "مرحلہ {{current}} از {{total}}",
+      "life_area": {
+        "label": "آپ زندگی کے کس شعبے کو بہتر بنانا چاہتے ہیں؟",
+        "options": {
+          "fitness": "فٹنس اور صحت",
+          "mindset": "ذہنیت اور عادات",
+          "business": "کاروبار اور کیریئر",
+          "learning": "سیکھنا اور مہارتیں",
+          "relationships": "تعلقات",
+          "creativity": "تخلیقیت",
+          "finance": "مالیات",
+          "spirituality": "روحانیت"
+        }
+      },
+      "goal": {
+        "label": "اپنا مقصد ایک جملے میں بیان کریں",
+        "placeholder": "مثال: میں روزانہ مراقبہ کی عادت بنانا چاہتا ہوں"
+      },
+      "time_available": {
+        "label": "آپ روزانہ کتنا وقت دے سکتے ہیں؟",
+        "options": {
+          "15min": "١٥ منٹ",
+          "30min": "٣٠ منٹ",
+          "1hr": "١ گھنٹہ",
+          "2hr": "٢+ گھنٹے"
+        }
+      },
+      "experience": {
+        "label": "آپ کا تجربہ کی سطح کیا ہے؟",
+        "options": {
+          "beginner": "مبتدی — ابھی شروع کر رہا ہوں",
+          "some": "کچھ تجربہ",
+          "intermediate": "درمیانی",
+          "advanced": "ماہر"
+        }
+      },
+      "motivation_style": {
+        "label": "آپ کو سب سے زیادہ کیا ترغیب دیتا ہے؟",
+        "options": {
+          "accountability": "جوابدہی اور ٹریکنگ",
+          "rewards": "انعامات اور سنگ میل",
+          "community": "کمیونٹی سپورٹ",
+          "data": "ڈیٹا اور پروگریس چارٹس",
+          "ai_coach": "AI کوچ رہنمائی"
+        }
+      },
+      "submit": "میری سفارشات حاصل کریں ←",
+      "loading": "آپ کا ذاتی منصوبہ بنایا جا رہا ہے…",
+      "next": "اگلا",
+      "back": "واپس"
+    },
+    "recommendation": {
+      "title": "آپ کی ذاتی سفارشات",
+      "top_niches": "آپ کے لیے بہترین چیلنجز",
+      "duration": "تجویز کردہ مدت",
+      "coach_type": "آپ کا کوچ انداز",
+      "start": "میرا چیلنج شروع کریں",
+      "days_label": "{{days}} دن"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "چیلنج بنائیں",
+      "select_niche": "اپنا توجہ کا شعبہ منتخب کریں",
+      "set_goal": "آپ کا مقصد کیا ہے؟",
+      "goal_placeholder": "مخصوص ہوں — جتنی تفصیل، اتنا بہتر منصوبہ",
+      "select_duration": "مدت منتخب کریں",
+      "select_coach": "اپنا AI کوچ منتخب کریں",
+      "launch": "چیلنج شروع کریں",
+      "creating": "آپ کا AI منصوبہ بنایا جا رہا ہے…",
+      "duration_days": "{{days}} دن",
+      "locked_duration": "انلاک کرنے کے لیے اپگریڈ کریں",
+      "step_of": "مرحلہ {{current}} از {{total}}"
+    },
+    "card": {
+      "day_of": "دن {{current}} از {{total}}",
+      "streak": "{{count}} دن مسلسل",
+      "completed": "{{count}} مکمل",
+      "active": "فعال",
+      "completed_status": "مکمل",
+      "abandoned": "ترک کیا",
+      "paused": "موقوف",
+      "resume": "دوبارہ شروع",
+      "view": "چیلنج دیکھیں",
+      "complete_day": "آج مکمل کریں",
+      "days_left": "{{count}} دن باقی"
+    },
+    "empty": {
+      "title": "کوئی فعال چیلنج نہیں",
+      "subtitle": "اپنی تبدیلی شروع کرنے کے لیے چیلنج شروع کریں",
+      "cta": "چیلنج بنائیں"
+    }
+  },
+  "today": {
+    "greeting_morning": "صبح بخیر، {{name}} ☀️",
+    "greeting_afternoon": "دوپہر بخیر، {{name}} 🌤️",
+    "greeting_evening": "شام بخیر، {{name}} 🌙",
+    "todays_task": "آج کا کام",
+    "day_label": "دن {{day}}",
+    "time_required": "درکار وقت",
+    "steps": "اقدامات",
+    "motivational_note": "کوچ کا نوٹ",
+    "check_in": "چیک ان سوال",
+    "mark_done": "مکمل کا نشان لگائیں ✓",
+    "already_done": "آج کے لیے ہو گیا!",
+    "loading_task": "آپ کا کام لوڈ ہو رہا ہے…",
+    "no_challenge": "کوئی فعال چیلنج نہیں۔ آج کا کام دیکھنے کے لیے ایک شروع کریں۔"
+  },
+  "report": {
+    "title": "آج کی رپورٹ",
+    "score": "سکور",
+    "out_of_10": "/ ١٠",
+    "progress_insight": "پیشرفت کا تجزیہ",
+    "motivational_message": "کوچ کا پیغام",
+    "tomorrow_preview": "کل کا پیش نظارہ",
+    "loading": "آپ کی رپورٹ تیار ہو رہی ہے…",
+    "days_completed": "مکمل دن",
+    "current_streak": "موجودہ سلسلہ",
+    "completion_rate": "تکمیل کی شرح",
+    "generate": "رپورٹ بنائیں"
+  },
+  "coach": {
+    "title": "AI کوچ",
+    "placeholder": "اپنے کوچ سے کچھ بھی پوچھیں…",
+    "send": "بھیجیں",
+    "thinking": "کوچ سوچ رہا ہے…",
+    "disclaimer": "Lumio AI سے چلتا ہے",
+    "context_label": "چیلنج کا تناظر",
+    "history_empty": "اپنے کوچ سے گفتگو شروع کریں",
+    "error": "کوچ دستیاب نہیں۔ دوبارہ کوشش کریں۔"
+  },
+  "community": {
+    "title": "کمیونٹی",
+    "feed_all": "سب",
+    "feed_following": "فالو کیے",
+    "new_post": "اپنی پیشرفت شیئر کریں",
+    "post_placeholder": "آج آپ نے کیا حاصل کیا؟",
+    "post_submit": "پوسٹ کریں",
+    "ai_draft": "✨ AI سے لکھیں",
+    "like": "پسند",
+    "comment": "تبصرہ",
+    "flag": "رپورٹ کریں",
+    "delete": "حذف",
+    "follow": "فالو کریں",
+    "unfollow": "ان فالو کریں",
+    "comments_title": "تبصرے",
+    "comment_placeholder": "تبصرہ شامل کریں…",
+    "comment_submit": "پوسٹ کریں",
+    "no_posts": "ابھی تک کوئی پوسٹ نہیں۔ پہلے ہوں!",
+    "load_more": "مزید لوڈ کریں",
+    "posted_at": "{{time}} پہلے",
+    "flagged": "پوسٹ رپورٹ ہو گئی",
+    "post_deleted": "پوسٹ حذف ہو گئی",
+    "requires_starter": "تبصرے کے لیے Starter پلان یا اس سے اوپر درکار ہے"
+  },
+  "journey": {
+    "title": "آپ کا سفر",
+    "timeline": "ٹائم لائن",
+    "milestones": "سنگ میل",
+    "day_label": "دن {{day}}",
+    "completed_day": "مکمل",
+    "skipped_day": "چھوڑا گیا",
+    "upcoming_day": "آنے والا",
+    "notes_label": "نوٹس",
+    "no_notes": "ابھی تک کوئی نوٹس نہیں",
+    "streak_record": "بہترین سلسلہ: {{count}} دن",
+    "total_completed": "مجموعی مکمل دن: {{count}}"
+  },
+  "dashboard": {
+    "title": "ڈیش بورڈ",
+    "active_challenges": "فعال چیلنجز",
+    "points": "پوائنٹس",
+    "streak": "سلسلہ",
+    "rank": "درجہ",
+    "leaderboard": "لیڈر بورڈ",
+    "badges": "بیجز",
+    "no_badges": "بیجز کمانے کے لیے چیلنجز مکمل کریں",
+    "recent_activity": "حالیہ سرگرمی",
+    "start_challenge": "چیلنج شروع کریں",
+    "upgrade_cta": "مزید فیچرز کے لیے اپگریڈ کریں"
+  },
+  "settings": {
+    "title": "ترتیبات",
+    "profile": "پروفائل",
+    "name": "نام",
+    "email": "ای میل",
+    "language": "زبان",
+    "theme": "تھیم",
+    "notifications": "اطلاعات",
+    "plan": "پلان",
+    "referral": "ریفرل",
+    "referral_code": "آپ کا ریفرل کوڈ",
+    "referral_copy": "لنک کاپی کریں",
+    "referral_copied": "کاپی ہو گیا!",
+    "save": "تبدیلیاں محفوظ کریں",
+    "saved": "محفوظ",
+    "danger_zone": "خطرناک زون",
+    "delete_account": "اکاؤنٹ حذف کریں",
+    "delete_confirm": "کیا آپ یقین کریں؟ یہ واپس نہیں ہو سکتا۔",
+    "current_plan": "موجودہ پلان: {{plan}}",
+    "upgrade": "پلان اپگریڈ کریں"
+  },
+  "pricing": {
+    "title": "اپنا پلان منتخب کریں",
+    "subtitle": "اپنی پوری صلاحیت آزاد کریں",
+    "free": { "name": "مفت", "price": "$٠", "period": "ہمیشہ کے لیے", "cta": "شروع کریں" },
+    "starter": { "name": "اسٹارٹر", "price": "$٥", "period": "/ ماہ", "cta": "مفت شروع کریں" },
+    "pro": { "name": "پرو", "price": "$٩", "period": "/ ماہ", "cta": "پرو بنیں", "badge": "سب سے مقبول" },
+    "elite": { "name": "ایلیٹ", "price": "$١٩", "period": "/ ماہ", "cta": "ایلیٹ بنیں" },
+    "feature_included": "شامل",
+    "feature_excluded": "شامل نہیں",
+    "billed_monthly": "ماہانہ ادائیگی",
+    "billed_annually": "سالانہ ادائیگی",
+    "save_percent": "{{percent}}% بچائیں"
+  },
+  "landing": {
+    "hero_headline": "اپنی\nترقی کو روشن کریں",
+    "hero_sub": "AI سے چلنے والا سب سے جدید لائف چیلنج پلیٹ فارم۔",
+    "hero_cta": "مفت شروع کریں",
+    "hero_cta_secondary": "دیکھیں یہ کیسے کام کرتا ہے",
+    "features_title": "اپنی زندگی بدلنے کے لیے سب کچھ",
+    "social_proof": "{{count}}+ لوگوں کے ساتھ شامل ہوں جو اپنی زندگی بدل رہے ہیں",
+    "testimonials_title": "شرکاء کیا کہتے ہیں"
+  },
+  "errors": {
+    "generic": "کچھ غلط ہوا۔ دوبارہ کوشش کریں۔",
+    "network": "نیٹ ورک کی خرابی۔ اپنا کنکشن چیک کریں۔",
+    "not_found": "صفحہ نہیں ملا۔",
+    "unauthorized": "جاری رکھنے کے لیے لاگ ان کریں۔",
+    "plan_limit": "اس فیچر کے لیے اعلیٰ پلان درکار ہے۔",
+    "ai_unavailable": "AI عارضی طور پر دستیاب نہیں۔ دوبارہ کوشش کریں۔",
+    "rate_limit": "روزانہ کی حد پوری ہو گئی۔ مزید کے لیے اپگریڈ کریں۔",
+    "validation": "اپنا ان پٹ چیک کریں اور دوبارہ کوشش کریں۔"
+  },
+  "common": {
+    "loading": "لوڈ ہو رہا ہے…",
+    "save": "محفوظ کریں",
+    "cancel": "منسوخ",
+    "confirm": "تصدیق",
+    "delete": "حذف",
+    "edit": "ترمیم",
+    "close": "بند کریں",
+    "back": "واپس",
+    "next": "اگلا",
+    "done": "ہو گیا",
+    "or": "یا",
+    "and": "اور",
+    "yes": "ہاں",
+    "no": "نہیں",
+    "upgrade": "اپگریڈ",
+    "learn_more": "مزید جانیں",
+    "copied": "کاپی ہو گیا!",
+    "day": "دن",
+    "days": "دن",
+    "points": "پوائنٹس",
+    "free": "مفت"
+  },
+  "moods": {
+    "gold": "پُرعزم",
+    "fire": "پُرجوش",
+    "ocean": "توجہ مند",
+    "forest": "مستحکم",
+    "violet": "تخلیقی",
+    "rose": "مشفق",
+    "cosmic": "متعالی",
+    "arctic": "صاف ذہن"
+  }
+}

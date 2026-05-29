@@ -1,0 +1,100 @@
+/**
+ * lumio-mood.css
+ * 
+ * 1. Sets CSS custom property defaults (gold theme)
+ * 2. Applies smooth transitions to every element using those vars
+ * 3. Imported once in the root layout
+ */
+
+/* ── Default token values (Gold mood) ───────────────────────────────────────── */
+:root {
+  --lumio-bg:      #080706;
+  --lumio-bg2:     #100e0a;
+  --lumio-bg3:     #181510;
+  --lumio-bg4:     #201c14;
+  --lumio-border:  #2a2418;
+  --lumio-border2: #362e1e;
+  --lumio-accent:  #f59e0b;
+  --lumio-accent2: #fbbf24;
+  --lumio-soft:    rgba(245,158,11,0.12);
+  --lumio-text:    #fdfaf3;
+  --lumio-text2:   #a09060;
+  --lumio-text3:   #504830;
+  --lumio-g:       linear-gradient(135deg,#f59e0b,#fbbf24);
+  --lumio-o1:      #f59e0b;
+  --lumio-o2:      #f97316;
+}
+
+/* ── Smooth transition on every element that uses mood vars ─────────────────── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color  0.4s ease,
+    color             0.4s ease,
+    border-color      0.4s ease,
+    box-shadow        0.4s ease,
+    opacity           0.25s ease;
+}
+
+/* ── Exceptions — no transition on elements where instant response matters ──── */
+input,
+textarea,
+select,
+button,
+a,
+[data-no-transition] {
+  transition:
+    background-color  0.4s ease,
+    color             0.4s ease,
+    border-color      0.4s ease,
+    box-shadow        0.4s ease,
+    transform         0.15s ease,
+    opacity           0.2s ease;
+}
+
+/* Framer Motion handles its own transitions — don't interfere */
+[data-framer-component-type],
+.framer-motion-override {
+  transition: none !important;
+}
+
+/* ── Utility classes using CSS vars ─────────────────────────────────────────── */
+
+.lumio-bg       { background-color: var(--lumio-bg); }
+.lumio-bg2      { background-color: var(--lumio-bg2); }
+.lumio-bg3      { background-color: var(--lumio-bg3); }
+.lumio-bg4      { background-color: var(--lumio-bg4); }
+.lumio-border   { border-color: var(--lumio-border); }
+.lumio-accent   { color: var(--lumio-accent); }
+.lumio-accent-bg { background-color: var(--lumio-accent); }
+.lumio-text     { color: var(--lumio-text); }
+.lumio-text2    { color: var(--lumio-text2); }
+.lumio-gradient { background: var(--lumio-g); }
+.lumio-soft-bg  { background-color: var(--lumio-soft); }
+
+/* Scrollbar theming */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--lumio-bg2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lumio-border2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lumio-accent);
+  opacity: 0.6;
+}
+
+/* Hide horizontal scrollbar on chip rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

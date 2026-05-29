@@ -1,0 +1,351 @@
+{
+  "_note": "NATIVE SPEAKER REVIEW REQUIRED before production.",
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "today": "आज",
+    "report": "रिपोर्ट",
+    "coach": "कोच",
+    "community": "समुदाय",
+    "journey": "यात्रा",
+    "settings": "सेटिंग्स",
+    "pricing": "मूल्य निर्धारण",
+    "logout": "लॉग आउट",
+    "back": "वापस"
+  },
+  "auth": {
+    "login": {
+      "title": "साइन इन करें",
+      "tagline": "अपनी वृद्धि को प्रकाशित करें",
+      "email": "ईमेल",
+      "email_placeholder": "आप@उदाहरण.com",
+      "password": "पासवर्ड",
+      "password_placeholder": "••••••••",
+      "submit": "साइन इन करें",
+      "no_account": "खाता नहीं है?",
+      "create_one": "बनाएँ",
+      "forgot_password": "पासवर्ड भूल गए?",
+      "error_invalid": "ईमेल या पासवर्ड गलत है",
+      "error_generic": "कुछ गलत हुआ। फिर से कोशिश करें।"
+    },
+    "register": {
+      "title": "खाता बनाएँ",
+      "tagline": "अपना परिवर्तन शुरू करें",
+      "name": "आपका नाम",
+      "name_placeholder": "राहुल शर्मा",
+      "email": "ईमेल",
+      "email_placeholder": "आप@उदाहरण.com",
+      "password": "पासवर्ड",
+      "password_placeholder": "न्यूनतम 8 अक्षर",
+      "submit": "खाता बनाएँ",
+      "have_account": "पहले से खाता है?",
+      "sign_in": "साइन इन करें",
+      "referral_prompt": "रेफरल कोड है?",
+      "referral_code": "रेफरल कोड",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "आप {{plan}} के लिए साइन अप कर रहे हैं",
+      "error_exists": "इस ईमेल से खाता पहले से मौजूद है",
+      "error_generic": "पंजीकरण विफल। फिर से कोशिश करें।"
+    },
+    "validation": {
+      "email_required": "मान्य ईमेल दर्ज करें",
+      "password_min": "पासवर्ड कम से कम 8 अक्षर का होना चाहिए",
+      "name_required": "नाम आवश्यक है"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "अपनी भाषा चुनें",
+      "subtitle": "Lumio आपकी भाषा में पूरी तरह अनुवादित होगा"
+    },
+    "quiz": {
+      "title": "आपकी यात्रा को व्यक्तिगत बनाएँ",
+      "subtitle": "आपकी परफेक्ट चुनौती बनाने के लिए 5 त्वरित प्रश्न",
+      "step_of": "चरण {{current}} / {{total}}",
+      "life_area": {
+        "label": "आप जीवन के किस क्षेत्र को सबसे ज़्यादा सुधारना चाहते हैं?",
+        "options": {
+          "fitness": "फिटनेस और स्वास्थ्य",
+          "mindset": "मानसिकता और आदतें",
+          "business": "व्यवसाय और करियर",
+          "learning": "सीखना और कौशल",
+          "relationships": "संबंध",
+          "creativity": "रचनात्मकता",
+          "finance": "वित्त",
+          "spirituality": "आध्यात्मिकता"
+        }
+      },
+      "goal": {
+        "label": "एक वाक्य में अपना लक्ष्य बताएँ",
+        "placeholder": "उदा. मैं रोज़ ध्यान की आदत बनाना चाहता हूँ"
+      },
+      "time_available": {
+        "label": "आप रोज़ कितना समय दे सकते हैं?",
+        "options": {
+          "15min": "15 मिनट",
+          "30min": "30 मिनट",
+          "1hr": "1 घंटा",
+          "2hr": "2+ घंटे"
+        }
+      },
+      "experience": {
+        "label": "आपका अनुभव स्तर क्या है?",
+        "options": {
+          "beginner": "शुरुआती — अभी शुरू कर रहे हैं",
+          "some": "कुछ अनुभव",
+          "intermediate": "मध्यम",
+          "advanced": "उन्नत"
+        }
+      },
+      "motivation_style": {
+        "label": "आपको सबसे ज़्यादा क्या प्रेरित करता है?",
+        "options": {
+          "accountability": "जवाबदेही और ट्रैकिंग",
+          "rewards": "पुरस्कार और मील के पत्थर",
+          "community": "समुदाय का समर्थन",
+          "data": "डेटा और प्रगति चार्ट",
+          "ai_coach": "AI कोच मार्गदर्शन"
+        }
+      },
+      "submit": "मेरी सिफारिशें प्राप्त करें →",
+      "loading": "आपकी व्यक्तिगत योजना बनाई जा रही है…",
+      "next": "अगला",
+      "back": "वापस"
+    },
+    "recommendation": {
+      "title": "आपकी व्यक्तिगत सिफारिशें",
+      "top_niches": "आपके लिए सबसे अच्छी चुनौतियाँ",
+      "duration": "अनुशंसित अवधि",
+      "coach_type": "आपकी कोच शैली",
+      "start": "मेरी चुनौती शुरू करें",
+      "days_label": "{{days}} दिन"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "चुनौती बनाएँ",
+      "select_niche": "अपना फोकस क्षेत्र चुनें",
+      "set_goal": "आपका लक्ष्य क्या है?",
+      "goal_placeholder": "विशिष्ट रहें — जितनी अधिक जानकारी, उतनी बेहतर योजना",
+      "select_duration": "अवधि चुनें",
+      "select_coach": "अपना AI कोच चुनें",
+      "launch": "चुनौती शुरू करें",
+      "creating": "आपकी AI योजना बन रही है…",
+      "duration_days": "{{days}} दिन",
+      "locked_duration": "अनलॉक करने के लिए अपग्रेड करें",
+      "step_of": "चरण {{current}} / {{total}}"
+    },
+    "card": {
+      "day_of": "दिन {{current}} / {{total}}",
+      "streak": "{{count}} दिनों की लकीर",
+      "completed": "{{count}} पूर्ण",
+      "active": "सक्रिय",
+      "completed_status": "पूर्ण",
+      "abandoned": "छोड़ा गया",
+      "paused": "रुका हुआ",
+      "resume": "फिर से शुरू",
+      "view": "चुनौती देखें",
+      "complete_day": "आज पूर्ण करें",
+      "days_left": "{{count}} दिन शेष"
+    },
+    "empty": {
+      "title": "कोई सक्रिय चुनौती नहीं",
+      "subtitle": "अपना परिवर्तन शुरू करने के लिए चुनौती शुरू करें",
+      "cta": "चुनौती बनाएँ"
+    }
+  },
+  "today": {
+    "greeting_morning": "सुप्रभात, {{name}} ☀️",
+    "greeting_afternoon": "नमस्कार, {{name}} 🌤️",
+    "greeting_evening": "शुभ संध्या, {{name}} 🌙",
+    "todays_task": "आज का कार्य",
+    "day_label": "दिन {{day}}",
+    "time_required": "आवश्यक समय",
+    "steps": "चरण",
+    "motivational_note": "कोच का नोट",
+    "check_in": "चेक-इन प्रश्न",
+    "mark_done": "पूर्ण चिह्नित करें ✓",
+    "already_done": "आज के लिए हो गया!",
+    "loading_task": "आपका कार्य लोड हो रहा है…",
+    "no_challenge": "कोई सक्रिय चुनौती नहीं। आज का कार्य देखने के लिए एक शुरू करें।"
+  },
+  "report": {
+    "title": "आज की रिपोर्ट",
+    "score": "स्कोर",
+    "out_of_10": "/ 10",
+    "progress_insight": "प्रगति विश्लेषण",
+    "motivational_message": "कोच का संदेश",
+    "tomorrow_preview": "कल की झलक",
+    "loading": "आपकी रिपोर्ट बन रही है…",
+    "days_completed": "पूर्ण दिन",
+    "current_streak": "वर्तमान लकीर",
+    "completion_rate": "पूर्णता दर",
+    "generate": "रिपोर्ट बनाएँ"
+  },
+  "coach": {
+    "title": "AI कोच",
+    "placeholder": "अपने कोच से कुछ भी पूछें…",
+    "send": "भेजें",
+    "thinking": "कोच सोच रहा है…",
+    "disclaimer": "Lumio AI द्वारा संचालित",
+    "context_label": "चुनौती संदर्भ",
+    "history_empty": "अपने कोच से बातचीत शुरू करें",
+    "error": "कोच उपलब्ध नहीं। फिर से कोशिश करें।"
+  },
+  "community": {
+    "title": "समुदाय",
+    "feed_all": "सभी",
+    "feed_following": "फॉलो किए",
+    "new_post": "अपनी प्रगति साझा करें",
+    "post_placeholder": "आज आपने क्या हासिल किया?",
+    "post_submit": "पोस्ट करें",
+    "ai_draft": "✨ AI से ड्राफ्ट करें",
+    "like": "पसंद",
+    "comment": "टिप्पणी",
+    "flag": "रिपोर्ट करें",
+    "delete": "हटाएँ",
+    "follow": "फॉलो करें",
+    "unfollow": "अनफॉलो करें",
+    "comments_title": "टिप्पणियाँ",
+    "comment_placeholder": "टिप्पणी जोड़ें…",
+    "comment_submit": "पोस्ट करें",
+    "no_posts": "अभी तक कोई पोस्ट नहीं। पहले बनें!",
+    "load_more": "और लोड करें",
+    "posted_at": "{{time}} पहले",
+    "flagged": "पोस्ट रिपोर्ट की गई",
+    "post_deleted": "पोस्ट हटाई गई",
+    "requires_starter": "टिप्पणी के लिए Starter प्लान या उससे ऊपर आवश्यक है"
+  },
+  "journey": {
+    "title": "आपकी यात्रा",
+    "timeline": "टाइमलाइन",
+    "milestones": "मील के पत्थर",
+    "day_label": "दिन {{day}}",
+    "completed_day": "पूर्ण",
+    "skipped_day": "छोड़ा गया",
+    "upcoming_day": "आगामी",
+    "notes_label": "नोट्स",
+    "no_notes": "अभी तक कोई नोट्स नहीं",
+    "streak_record": "सबसे लंबी लकीर: {{count}} दिन",
+    "total_completed": "कुल पूर्ण दिन: {{count}}"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "active_challenges": "सक्रिय चुनौतियाँ",
+    "points": "अंक",
+    "streak": "लकीर",
+    "rank": "रैंक",
+    "leaderboard": "लीडरबोर्ड",
+    "badges": "बैज",
+    "no_badges": "बैज अर्जित करने के लिए चुनौतियाँ पूरी करें",
+    "recent_activity": "हाल की गतिविधि",
+    "start_challenge": "चुनौती शुरू करें",
+    "upgrade_cta": "अधिक सुविधाओं के लिए अपग्रेड करें"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "profile": "प्रोफ़ाइल",
+    "name": "नाम",
+    "email": "ईमेल",
+    "language": "भाषा",
+    "theme": "थीम",
+    "notifications": "सूचनाएँ",
+    "plan": "प्लान",
+    "referral": "रेफरल",
+    "referral_code": "आपका रेफरल कोड",
+    "referral_copy": "लिंक कॉपी करें",
+    "referral_copied": "कॉपी हो गया!",
+    "save": "परिवर्तन सहेजें",
+    "saved": "सहेजा गया",
+    "danger_zone": "खतरनाक क्षेत्र",
+    "delete_account": "खाता हटाएँ",
+    "delete_confirm": "क्या आप सुनिश्चित हैं? यह वापस नहीं हो सकता।",
+    "current_plan": "वर्तमान प्लान: {{plan}}",
+    "upgrade": "प्लान अपग्रेड करें"
+  },
+  "pricing": {
+    "title": "अपना प्लान चुनें",
+    "subtitle": "अपनी पूरी क्षमता को उजागर करें",
+    "free": {
+      "name": "मुफ़्त",
+      "price": "$0",
+      "period": "हमेशा के लिए",
+      "cta": "शुरू करें"
+    },
+    "starter": {
+      "name": "स्टार्टर",
+      "price": "$5",
+      "period": "/ माह",
+      "cta": "मुफ़्त शुरू करें"
+    },
+    "pro": {
+      "name": "प्रो",
+      "price": "$9",
+      "period": "/ माह",
+      "cta": "प्रो बनें",
+      "badge": "सबसे लोकप्रिय"
+    },
+    "elite": {
+      "name": "एलीट",
+      "price": "$19",
+      "period": "/ माह",
+      "cta": "एलीट बनें"
+    },
+    "feature_included": "शामिल",
+    "feature_excluded": "शामिल नहीं",
+    "billed_monthly": "मासिक बिलिंग",
+    "billed_annually": "वार्षिक बिलिंग",
+    "save_percent": "{{percent}}% बचाएँ"
+  },
+  "landing": {
+    "hero_headline": "अपनी\nवृद्धि को प्रकाशित करें",
+    "hero_sub": "AI-संचालित सबसे उन्नत जीवन चुनौती मंच।",
+    "hero_cta": "मुफ़्त शुरू करें",
+    "hero_cta_secondary": "देखें यह कैसे काम करता है",
+    "features_title": "अपना जीवन बदलने के लिए सब कुछ",
+    "social_proof": "{{count}}+ लोगों के साथ जुड़ें जो अपना जीवन बदल रहे हैं",
+    "testimonials_title": "प्रतिभागी क्या कहते हैं"
+  },
+  "errors": {
+    "generic": "कुछ गलत हुआ। फिर से कोशिश करें।",
+    "network": "नेटवर्क त्रुटि। अपना कनेक्शन जाँचें।",
+    "not_found": "पृष्ठ नहीं मिला।",
+    "unauthorized": "जारी रखने के लिए साइन इन करें।",
+    "plan_limit": "इस सुविधा के लिए उच्चतर प्लान आवश्यक है।",
+    "ai_unavailable": "AI अस्थायी रूप से अनुपलब्ध है। फिर से कोशिश करें।",
+    "rate_limit": "दैनिक सीमा पूरी हो गई। अधिक के लिए अपग्रेड करें।",
+    "validation": "अपना इनपुट जाँचें और फिर से कोशिश करें।"
+  },
+  "common": {
+    "loading": "लोड हो रहा है…",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "delete": "हटाएँ",
+    "edit": "संपादित करें",
+    "close": "बंद करें",
+    "back": "वापस",
+    "next": "अगला",
+    "done": "हो गया",
+    "or": "या",
+    "and": "और",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "upgrade": "अपग्रेड",
+    "learn_more": "और जानें",
+    "copied": "कॉपी हो गया!",
+    "day": "दिन",
+    "days": "दिन",
+    "points": "अंक",
+    "free": "मुफ़्त"
+  },
+  "moods": {
+    "gold": "महत्वाकांक्षी",
+    "fire": "तीव्र",
+    "ocean": "केंद्रित",
+    "forest": "स्थिर",
+    "violet": "रचनात्मक",
+    "rose": "पोषणकारी",
+    "cosmic": "अतीन्द्रिय",
+    "arctic": "स्पष्ट"
+  }
+}

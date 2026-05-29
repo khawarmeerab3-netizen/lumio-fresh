@@ -1,0 +1,351 @@
+{
+  "_note": "NATIVE SPEAKER REVIEW REQUIRED before production.",
+  "nav": {
+    "dashboard": "Dasbor",
+    "today": "Hari Ini",
+    "report": "Laporan",
+    "coach": "Pelatih",
+    "community": "Komunitas",
+    "journey": "Perjalanan",
+    "settings": "Pengaturan",
+    "pricing": "Harga",
+    "logout": "Keluar",
+    "back": "Kembali"
+  },
+  "auth": {
+    "login": {
+      "title": "Masuk",
+      "tagline": "Terangi Pertumbuhanmu",
+      "email": "Email",
+      "email_placeholder": "kamu@contoh.com",
+      "password": "Kata Sandi",
+      "password_placeholder": "••••••••",
+      "submit": "Masuk",
+      "no_account": "Belum punya akun?",
+      "create_one": "Buat sekarang",
+      "forgot_password": "Lupa kata sandi?",
+      "error_invalid": "Email atau kata sandi salah",
+      "error_generic": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "register": {
+      "title": "Buat Akun",
+      "tagline": "Mulai Transformasimu",
+      "name": "Namamu",
+      "name_placeholder": "Budi Santoso",
+      "email": "Email",
+      "email_placeholder": "kamu@contoh.com",
+      "password": "Kata Sandi",
+      "password_placeholder": "Min. 8 karakter",
+      "submit": "Buat Akun",
+      "have_account": "Sudah punya akun?",
+      "sign_in": "Masuk",
+      "referral_prompt": "Punya kode referral?",
+      "referral_code": "Kode Referral",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "Kamu mendaftar untuk {{plan}}",
+      "error_exists": "Akun dengan email ini sudah ada",
+      "error_generic": "Pendaftaran gagal. Silakan coba lagi."
+    },
+    "validation": {
+      "email_required": "Masukkan email yang valid",
+      "password_min": "Kata sandi minimal 8 karakter",
+      "name_required": "Nama wajib diisi"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "Pilih bahasa Anda",
+      "subtitle": "Lumio akan sepenuhnya diterjemahkan ke bahasa Anda"
+    },
+    "quiz": {
+      "title": "Mari personalisasi perjalananmu",
+      "subtitle": "5 pertanyaan cepat untuk membangun tantangan sempurnamu",
+      "step_of": "Langkah {{current}} dari {{total}}",
+      "life_area": {
+        "label": "Area kehidupan mana yang paling ingin kamu tingkatkan?",
+        "options": {
+          "fitness": "Kebugaran & Kesehatan",
+          "mindset": "Pola Pikir & Kebiasaan",
+          "business": "Bisnis & Karier",
+          "learning": "Belajar & Keterampilan",
+          "relationships": "Hubungan",
+          "creativity": "Kreativitas",
+          "finance": "Keuangan",
+          "spirituality": "Spiritualitas"
+        }
+      },
+      "goal": {
+        "label": "Jelaskan tujuanmu dalam satu kalimat",
+        "placeholder": "cth. Saya ingin membangun kebiasaan meditasi harian"
+      },
+      "time_available": {
+        "label": "Berapa lama waktu yang bisa kamu dedikasikan setiap hari?",
+        "options": {
+          "15min": "15 menit",
+          "30min": "30 menit",
+          "1hr": "1 jam",
+          "2hr": "2+ jam"
+        }
+      },
+      "experience": {
+        "label": "Apa tingkat pengalamanmu?",
+        "options": {
+          "beginner": "Pemula — baru memulai",
+          "some": "Sedikit pengalaman",
+          "intermediate": "Menengah",
+          "advanced": "Mahir"
+        }
+      },
+      "motivation_style": {
+        "label": "Apa yang paling memotivasimu?",
+        "options": {
+          "accountability": "Akuntabilitas & pelacakan",
+          "rewards": "Hadiah & pencapaian",
+          "community": "Dukungan komunitas",
+          "data": "Data & grafik kemajuan",
+          "ai_coach": "Panduan pelatih AI"
+        }
+      },
+      "submit": "Dapatkan rekomendasiku →",
+      "loading": "Membangun rencana personalmu…",
+      "next": "Lanjut",
+      "back": "Kembali"
+    },
+    "recommendation": {
+      "title": "Rekomendasi Personalmu",
+      "top_niches": "Tantangan terbaik untukmu",
+      "duration": "Durasi yang disarankan",
+      "coach_type": "Gaya pelatihanmu",
+      "start": "Mulai tantanganku",
+      "days_label": "{{days}} Hari"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "Buat Tantangan",
+      "select_niche": "Pilih area fokusmu",
+      "set_goal": "Apa tujuanmu?",
+      "goal_placeholder": "Jadilah spesifik — semakin detail, semakin baik rencanamu",
+      "select_duration": "Pilih durasi",
+      "select_coach": "Pilih pelatih AI-mu",
+      "launch": "Mulai Tantangan",
+      "creating": "Membangun rencana AI-mu…",
+      "duration_days": "{{days}} Hari",
+      "locked_duration": "Upgrade untuk membuka",
+      "step_of": "Langkah {{current}} dari {{total}}"
+    },
+    "card": {
+      "day_of": "Hari {{current}} dari {{total}}",
+      "streak": "{{count}} hari berturut-turut",
+      "completed": "{{count}} selesai",
+      "active": "Aktif",
+      "completed_status": "Selesai",
+      "abandoned": "Ditinggalkan",
+      "paused": "Dijeda",
+      "resume": "Lanjutkan",
+      "view": "Lihat tantangan",
+      "complete_day": "Selesaikan hari ini",
+      "days_left": "{{count}} hari tersisa"
+    },
+    "empty": {
+      "title": "Tidak ada tantangan aktif",
+      "subtitle": "Mulai tantangan untuk memulai transformasimu",
+      "cta": "Buat Tantangan"
+    }
+  },
+  "today": {
+    "greeting_morning": "Selamat pagi, {{name}} ☀️",
+    "greeting_afternoon": "Selamat siang, {{name}} 🌤️",
+    "greeting_evening": "Selamat malam, {{name}} 🌙",
+    "todays_task": "Tugas Hari Ini",
+    "day_label": "Hari {{day}}",
+    "time_required": "Waktu yang diperlukan",
+    "steps": "Langkah-langkah",
+    "motivational_note": "Catatan pelatih",
+    "check_in": "Pertanyaan check-in",
+    "mark_done": "Tandai selesai ✓",
+    "already_done": "Sudah selesai untuk hari ini!",
+    "loading_task": "Memuat tugasmu…",
+    "no_challenge": "Tidak ada tantangan aktif. Mulai satu untuk melihat tugas hari ini."
+  },
+  "report": {
+    "title": "Laporan Hari Ini",
+    "score": "Skor",
+    "out_of_10": "/ 10",
+    "progress_insight": "Analisis kemajuan",
+    "motivational_message": "Pesan dari pelatimu",
+    "tomorrow_preview": "Pratinjau besok",
+    "loading": "Membuat laporanmu…",
+    "days_completed": "Hari selesai",
+    "current_streak": "Streak saat ini",
+    "completion_rate": "Tingkat penyelesaian",
+    "generate": "Buat Laporan"
+  },
+  "coach": {
+    "title": "Pelatih AI",
+    "placeholder": "Tanyakan apa saja kepada pelatimu…",
+    "send": "Kirim",
+    "thinking": "Pelatih sedang berpikir…",
+    "disclaimer": "Didukung oleh Lumio AI",
+    "context_label": "Konteks tantangan",
+    "history_empty": "Mulai percakapan dengan pelatimu",
+    "error": "Pelatih tidak tersedia. Silakan coba lagi."
+  },
+  "community": {
+    "title": "Komunitas",
+    "feed_all": "Semua",
+    "feed_following": "Mengikuti",
+    "new_post": "Bagikan kemajuanmu",
+    "post_placeholder": "Apa yang kamu capai hari ini?",
+    "post_submit": "Posting",
+    "ai_draft": "✨ Draf dengan AI",
+    "like": "Suka",
+    "comment": "Komentar",
+    "flag": "Laporkan",
+    "delete": "Hapus",
+    "follow": "Ikuti",
+    "unfollow": "Berhenti Ikuti",
+    "comments_title": "Komentar",
+    "comment_placeholder": "Tambah komentar…",
+    "comment_submit": "Posting",
+    "no_posts": "Belum ada postingan. Jadilah yang pertama!",
+    "load_more": "Muat lebih banyak",
+    "posted_at": "{{time}} yang lalu",
+    "flagged": "Postingan dilaporkan",
+    "post_deleted": "Postingan dihapus",
+    "requires_starter": "Komentar memerlukan paket Starter atau lebih tinggi"
+  },
+  "journey": {
+    "title": "Perjalananmu",
+    "timeline": "Garis Waktu",
+    "milestones": "Pencapaian",
+    "day_label": "Hari {{day}}",
+    "completed_day": "Selesai",
+    "skipped_day": "Dilewati",
+    "upcoming_day": "Akan Datang",
+    "notes_label": "Catatan",
+    "no_notes": "Belum ada catatan",
+    "streak_record": "Streak terbaik: {{count}} hari",
+    "total_completed": "Total hari selesai: {{count}}"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "active_challenges": "Tantangan Aktif",
+    "points": "Poin",
+    "streak": "Streak",
+    "rank": "Peringkat",
+    "leaderboard": "Papan Skor",
+    "badges": "Lencana",
+    "no_badges": "Selesaikan tantangan untuk mendapatkan lencana",
+    "recent_activity": "Aktivitas Terkini",
+    "start_challenge": "Mulai tantangan",
+    "upgrade_cta": "Upgrade untuk lebih banyak fitur"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "profile": "Profil",
+    "name": "Nama",
+    "email": "Email",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "notifications": "Notifikasi",
+    "plan": "Paket",
+    "referral": "Referral",
+    "referral_code": "Kode referralmu",
+    "referral_copy": "Salin tautan",
+    "referral_copied": "Tersalin!",
+    "save": "Simpan perubahan",
+    "saved": "Tersimpan",
+    "danger_zone": "Zona Berbahaya",
+    "delete_account": "Hapus akun",
+    "delete_confirm": "Yakin? Ini tidak bisa dibatalkan.",
+    "current_plan": "Paket saat ini: {{plan}}",
+    "upgrade": "Upgrade paket"
+  },
+  "pricing": {
+    "title": "Pilih paketmu",
+    "subtitle": "Buka potensi penuhmu",
+    "free": {
+      "name": "Gratis",
+      "price": "$0",
+      "period": "selamanya",
+      "cta": "Mulai"
+    },
+    "starter": {
+      "name": "Starter",
+      "price": "$5",
+      "period": "/ bulan",
+      "cta": "Mulai gratis"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9",
+      "period": "/ bulan",
+      "cta": "Jadi Pro",
+      "badge": "Paling populer"
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "$19",
+      "period": "/ bulan",
+      "cta": "Jadi Elite"
+    },
+    "feature_included": "Termasuk",
+    "feature_excluded": "Tidak termasuk",
+    "billed_monthly": "Tagihan bulanan",
+    "billed_annually": "Tagihan tahunan",
+    "save_percent": "Hemat {{percent}}%"
+  },
+  "landing": {
+    "hero_headline": "Terangi\nPertumbuhanmu",
+    "hero_sub": "Platform tantangan kehidupan berbasis AI paling canggih di dunia.",
+    "hero_cta": "Mulai gratis",
+    "hero_cta_secondary": "Lihat cara kerjanya",
+    "features_title": "Semua yang kamu butuhkan untuk mengubah hidupmu",
+    "social_proof": "Bergabung dengan {{count}}+ orang yang sudah mengubah hidup mereka",
+    "testimonials_title": "Apa kata para peserta"
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "network": "Kesalahan jaringan. Periksa koneksimu.",
+    "not_found": "Halaman tidak ditemukan.",
+    "unauthorized": "Silakan masuk untuk melanjutkan.",
+    "plan_limit": "Fitur ini memerlukan paket yang lebih tinggi.",
+    "ai_unavailable": "AI sementara tidak tersedia. Silakan coba lagi.",
+    "rate_limit": "Batas harian tercapai. Upgrade untuk lebih banyak.",
+    "validation": "Periksa inputmu dan coba lagi."
+  },
+  "common": {
+    "loading": "Memuat…",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "close": "Tutup",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "done": "Selesai",
+    "or": "atau",
+    "and": "dan",
+    "yes": "Ya",
+    "no": "Tidak",
+    "upgrade": "Upgrade",
+    "learn_more": "Pelajari lebih lanjut",
+    "copied": "Tersalin!",
+    "day": "hari",
+    "days": "hari",
+    "points": "poin",
+    "free": "Gratis"
+  },
+  "moods": {
+    "gold": "Ambisius",
+    "fire": "Intens",
+    "ocean": "Fokus",
+    "forest": "Teguh",
+    "violet": "Kreatif",
+    "rose": "Penuh Kasih",
+    "cosmic": "Transenden",
+    "arctic": "Jernih"
+  }
+}

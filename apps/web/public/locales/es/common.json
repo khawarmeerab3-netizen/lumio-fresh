@@ -1,0 +1,329 @@
+{
+  "nav": {
+    "dashboard": "Panel",
+    "today": "Hoy",
+    "report": "Informe",
+    "coach": "Coach",
+    "community": "Comunidad",
+    "journey": "Viaje",
+    "settings": "Ajustes",
+    "pricing": "Precios",
+    "logout": "Cerrar sesión",
+    "back": "Volver"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "tagline": "Ilumina Tu Crecimiento",
+      "email": "Correo electrónico",
+      "email_placeholder": "tú@ejemplo.com",
+      "password": "Contraseña",
+      "password_placeholder": "••••••••",
+      "submit": "Iniciar sesión",
+      "no_account": "¿Sin cuenta?",
+      "create_one": "Créala",
+      "forgot_password": "¿Olvidaste la contraseña?",
+      "error_invalid": "Correo o contraseña incorrectos",
+      "error_generic": "Algo salió mal. Por favor intenta de nuevo."
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "tagline": "Comienza tu transformación",
+      "name": "Tu nombre",
+      "name_placeholder": "Alex García",
+      "email": "Correo electrónico",
+      "email_placeholder": "tú@ejemplo.com",
+      "password": "Contraseña",
+      "password_placeholder": "Mín. 8 caracteres",
+      "submit": "Crear cuenta",
+      "have_account": "¿Ya tienes una?",
+      "sign_in": "Inicia sesión",
+      "referral_prompt": "¿Tienes un código de referido?",
+      "referral_code": "Código de referido",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "Te estás registrando en {{plan}}",
+      "error_exists": "Ya existe una cuenta con este correo",
+      "error_generic": "Registro fallido. Por favor intenta de nuevo."
+    },
+    "validation": {
+      "email_required": "Ingresa un correo válido",
+      "password_min": "La contraseña debe tener al menos 8 caracteres",
+      "name_required": "El nombre es obligatorio"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "Elige tu idioma",
+      "subtitle": "Lumio estará completamente traducido a tu idioma"
+    },
+    "quiz": {
+      "title": "Personalicemos tu viaje",
+      "subtitle": "5 preguntas rápidas para crear tu reto perfecto",
+      "step_of": "Paso {{current}} de {{total}}",
+      "life_area": {
+        "label": "¿Qué área de tu vida quieres mejorar más?",
+        "options": {
+          "fitness": "Fitness y Salud",
+          "mindset": "Mentalidad y Hábitos",
+          "business": "Negocios y Carrera",
+          "learning": "Aprendizaje y Habilidades",
+          "relationships": "Relaciones",
+          "creativity": "Creatividad",
+          "finance": "Finanzas",
+          "spirituality": "Espiritualidad"
+        }
+      },
+      "goal": {
+        "label": "Describe tu objetivo en una frase",
+        "placeholder": "ej. Quiero construir un hábito diario de meditación"
+      },
+      "time_available": {
+        "label": "¿Cuánto tiempo puedes dedicar cada día?",
+        "options": {
+          "15min": "15 minutos",
+          "30min": "30 minutos",
+          "1hr": "1 hora",
+          "2hr": "2+ horas"
+        }
+      },
+      "experience": {
+        "label": "¿Cuál es tu nivel de experiencia?",
+        "options": {
+          "beginner": "Principiante — recién empezando",
+          "some": "Algo de experiencia",
+          "intermediate": "Intermedio",
+          "advanced": "Avanzado"
+        }
+      },
+      "motivation_style": {
+        "label": "¿Qué te motiva más?",
+        "options": {
+          "accountability": "Responsabilidad y seguimiento",
+          "rewards": "Recompensas e hitos",
+          "community": "Apoyo de la comunidad",
+          "data": "Datos y gráficos de progreso",
+          "ai_coach": "Guía del coach de IA"
+        }
+      },
+      "submit": "Obtener mis recomendaciones →",
+      "loading": "Construyendo tu plan personalizado…",
+      "next": "Siguiente",
+      "back": "Volver"
+    },
+    "recommendation": {
+      "title": "Tus recomendaciones personalizadas",
+      "top_niches": "Mejores retos para ti",
+      "duration": "Duración recomendada",
+      "coach_type": "Tu estilo de coach",
+      "start": "Comenzar mi reto",
+      "days_label": "{{days}} Días"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "Crear un reto",
+      "select_niche": "Elige tu área de enfoque",
+      "set_goal": "¿Cuál es tu objetivo?",
+      "goal_placeholder": "Sé específico — cuanto más detalle, mejor será tu plan",
+      "select_duration": "Elige la duración",
+      "select_coach": "Elige tu coach de IA",
+      "launch": "Lanzar reto",
+      "creating": "Construyendo tu plan de IA…",
+      "duration_days": "{{days}} Días",
+      "locked_duration": "Mejora para desbloquear",
+      "step_of": "Paso {{current}} de {{total}}"
+    },
+    "card": {
+      "day_of": "Día {{current}} de {{total}}",
+      "streak": "{{count}} días seguidos",
+      "completed": "{{count}} completados",
+      "active": "Activo",
+      "completed_status": "Completado",
+      "abandoned": "Abandonado",
+      "paused": "Pausado",
+      "resume": "Reanudar",
+      "view": "Ver reto",
+      "complete_day": "Completar hoy",
+      "days_left": "{{count}} días restantes"
+    },
+    "empty": {
+      "title": "Sin retos activos",
+      "subtitle": "Inicia un reto para comenzar tu transformación",
+      "cta": "Crear reto"
+    }
+  },
+  "today": {
+    "greeting_morning": "Buenos días, {{name}} ☀️",
+    "greeting_afternoon": "Buenas tardes, {{name}} 🌤️",
+    "greeting_evening": "Buenas noches, {{name}} 🌙",
+    "todays_task": "Tarea de Hoy",
+    "day_label": "Día {{day}}",
+    "time_required": "Tiempo requerido",
+    "steps": "Pasos",
+    "motivational_note": "Nota del coach",
+    "check_in": "Pregunta de seguimiento",
+    "mark_done": "Marcar como hecho ✓",
+    "already_done": "¡Hecho por hoy!",
+    "loading_task": "Cargando tu tarea…",
+    "no_challenge": "Sin reto activo. Inicia uno para ver la tarea de hoy."
+  },
+  "report": {
+    "title": "Informe de Hoy",
+    "score": "Puntuación",
+    "out_of_10": "/ 10",
+    "progress_insight": "Perspectiva de progreso",
+    "motivational_message": "Mensaje de tu coach",
+    "tomorrow_preview": "Vista previa de mañana",
+    "loading": "Generando tu informe…",
+    "days_completed": "Días completados",
+    "current_streak": "Racha actual",
+    "completion_rate": "Tasa de finalización",
+    "generate": "Generar informe"
+  },
+  "coach": {
+    "title": "Coach de IA",
+    "placeholder": "Pregúntale cualquier cosa a tu coach…",
+    "send": "Enviar",
+    "thinking": "El coach está pensando…",
+    "disclaimer": "Impulsado por Lumio IA",
+    "context_label": "Contexto del reto",
+    "history_empty": "Inicia una conversación con tu coach",
+    "error": "El coach no está disponible. Por favor intenta de nuevo."
+  },
+  "community": {
+    "title": "Comunidad",
+    "feed_all": "Todo",
+    "feed_following": "Siguiendo",
+    "new_post": "Comparte tu progreso",
+    "post_placeholder": "¿Qué lograste hoy?",
+    "post_submit": "Publicar",
+    "ai_draft": "✨ Redactar con IA",
+    "like": "Me gusta",
+    "comment": "Comentar",
+    "flag": "Reportar",
+    "delete": "Eliminar",
+    "follow": "Seguir",
+    "unfollow": "Dejar de seguir",
+    "comments_title": "Comentarios",
+    "comment_placeholder": "Añade un comentario…",
+    "comment_submit": "Publicar",
+    "no_posts": "No hay publicaciones aún. ¡Sé el primero!",
+    "load_more": "Cargar más",
+    "posted_at": "hace {{time}}",
+    "flagged": "Publicación reportada",
+    "post_deleted": "Publicación eliminada",
+    "requires_starter": "Comentar requiere plan Starter o superior"
+  },
+  "journey": {
+    "title": "Tu Viaje",
+    "timeline": "Línea de tiempo",
+    "milestones": "Hitos",
+    "day_label": "Día {{day}}",
+    "completed_day": "Completado",
+    "skipped_day": "Omitido",
+    "upcoming_day": "Próximo",
+    "notes_label": "Notas",
+    "no_notes": "Sin notas aún",
+    "streak_record": "Mejor racha: {{count}} días",
+    "total_completed": "Días totales completados: {{count}}"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "active_challenges": "Retos Activos",
+    "points": "Puntos",
+    "streak": "Racha",
+    "rank": "Rango",
+    "leaderboard": "Tabla de clasificación",
+    "badges": "Insignias",
+    "no_badges": "Completa retos para ganar insignias",
+    "recent_activity": "Actividad Reciente",
+    "start_challenge": "Iniciar un reto",
+    "upgrade_cta": "Mejora para más funciones"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "profile": "Perfil",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "language": "Idioma",
+    "theme": "Tema",
+    "notifications": "Notificaciones",
+    "plan": "Plan",
+    "referral": "Referido",
+    "referral_code": "Tu código de referido",
+    "referral_copy": "Copiar enlace",
+    "referral_copied": "¡Copiado!",
+    "save": "Guardar cambios",
+    "saved": "Guardado",
+    "danger_zone": "Zona de Peligro",
+    "delete_account": "Eliminar cuenta",
+    "delete_confirm": "¿Estás seguro? Esto no se puede deshacer.",
+    "current_plan": "Plan actual: {{plan}}",
+    "upgrade": "Mejorar plan"
+  },
+  "pricing": {
+    "title": "Elige tu plan",
+    "subtitle": "Desbloquea todo tu potencial",
+    "free": { "name": "Gratis", "price": "$0", "period": "para siempre", "cta": "Comenzar" },
+    "starter": { "name": "Starter", "price": "$5", "period": "/ mes", "cta": "Empieza gratis" },
+    "pro": { "name": "Pro", "price": "$9", "period": "/ mes", "cta": "Ir a Pro", "badge": "Más popular" },
+    "elite": { "name": "Elite", "price": "$19", "period": "/ mes", "cta": "Ir a Elite" },
+    "feature_included": "Incluido",
+    "feature_excluded": "No incluido",
+    "billed_monthly": "Facturado mensualmente",
+    "billed_annually": "Facturado anualmente",
+    "save_percent": "Ahorra {{percent}}%"
+  },
+  "landing": {
+    "hero_headline": "Ilumina\nTu Crecimiento",
+    "hero_sub": "La plataforma de retos de vida más avanzada impulsada por IA.",
+    "hero_cta": "Empieza gratis",
+    "hero_cta_secondary": "Ver cómo funciona",
+    "features_title": "Todo lo que necesitas para transformar tu vida",
+    "social_proof": "Únete a más de {{count}} personas transformando sus vidas",
+    "testimonials_title": "Lo que dicen los participantes"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "network": "Error de red. Verifica tu conexión.",
+    "not_found": "Página no encontrada.",
+    "unauthorized": "Por favor inicia sesión para continuar.",
+    "plan_limit": "Esta función requiere un plan superior.",
+    "ai_unavailable": "La IA no está disponible temporalmente. Por favor intenta de nuevo.",
+    "rate_limit": "Límite diario alcanzado. Mejora para obtener más.",
+    "validation": "Por favor verifica tu entrada e intenta de nuevo."
+  },
+  "common": {
+    "loading": "Cargando…",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "done": "Hecho",
+    "or": "o",
+    "and": "y",
+    "yes": "Sí",
+    "no": "No",
+    "upgrade": "Mejorar",
+    "learn_more": "Saber más",
+    "copied": "¡Copiado!",
+    "day": "día",
+    "days": "días",
+    "points": "puntos",
+    "free": "Gratis"
+  },
+  "moods": {
+    "gold": "Ambicioso",
+    "fire": "Intenso",
+    "ocean": "Enfocado",
+    "forest": "Centrado",
+    "violet": "Creativo",
+    "rose": "Cuidadoso",
+    "cosmic": "Trascendente",
+    "arctic": "Claro"
+  }
+}

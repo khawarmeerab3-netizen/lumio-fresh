@@ -1,0 +1,350 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "today": "Today",
+    "report": "Report",
+    "coach": "Coach",
+    "community": "Community",
+    "journey": "Journey",
+    "settings": "Settings",
+    "pricing": "Pricing",
+    "logout": "Sign out",
+    "back": "Back"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "tagline": "Illuminate Your Growth",
+      "email": "Email",
+      "email_placeholder": "you@example.com",
+      "password": "Password",
+      "password_placeholder": "••••••••",
+      "submit": "Sign in",
+      "no_account": "No account?",
+      "create_one": "Create one",
+      "forgot_password": "Forgot password?",
+      "error_invalid": "Invalid email or password",
+      "error_generic": "Something went wrong. Please try again."
+    },
+    "register": {
+      "title": "Create account",
+      "tagline": "Start your transformation",
+      "name": "Your name",
+      "name_placeholder": "Alex Johnson",
+      "email": "Email",
+      "email_placeholder": "you@example.com",
+      "password": "Password",
+      "password_placeholder": "Min. 8 characters",
+      "submit": "Create account",
+      "have_account": "Already have one?",
+      "sign_in": "Sign in",
+      "referral_prompt": "Have a referral code?",
+      "referral_code": "Referral code",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "You're signing up for {{plan}}",
+      "error_exists": "An account with this email already exists",
+      "error_generic": "Registration failed. Please try again."
+    },
+    "validation": {
+      "email_required": "Enter a valid email",
+      "password_min": "Password must be at least 8 characters",
+      "name_required": "Name is required"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "Choose your language",
+      "subtitle": "Lumio will be fully translated into your language"
+    },
+    "quiz": {
+      "title": "Let's personalise your journey",
+      "subtitle": "5 quick questions to build your perfect challenge",
+      "step_of": "Step {{current}} of {{total}}",
+      "life_area": {
+        "label": "Which area of life do you most want to improve?",
+        "options": {
+          "fitness": "Fitness & Health",
+          "mindset": "Mindset & Habits",
+          "business": "Business & Career",
+          "learning": "Learning & Skills",
+          "relationships": "Relationships",
+          "creativity": "Creativity",
+          "finance": "Finance",
+          "spirituality": "Spirituality"
+        }
+      },
+      "goal": {
+        "label": "Describe your goal in one sentence",
+        "placeholder": "e.g. I want to build a daily meditation habit"
+      },
+      "time_available": {
+        "label": "How much time can you dedicate daily?",
+        "options": {
+          "15min": "15 minutes",
+          "30min": "30 minutes",
+          "1hr": "1 hour",
+          "2hr": "2+ hours"
+        }
+      },
+      "experience": {
+        "label": "What is your experience level?",
+        "options": {
+          "beginner": "Beginner — just starting out",
+          "some": "Some experience",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced"
+        }
+      },
+      "motivation_style": {
+        "label": "What motivates you most?",
+        "options": {
+          "accountability": "Accountability & tracking",
+          "rewards": "Rewards & milestones",
+          "community": "Community support",
+          "data": "Data & progress charts",
+          "ai_coach": "AI coach guidance"
+        }
+      },
+      "submit": "Get my recommendations →",
+      "loading": "Building your personalised plan…",
+      "next": "Next",
+      "back": "Back"
+    },
+    "recommendation": {
+      "title": "Your personalised recommendations",
+      "top_niches": "Top challenges for you",
+      "duration": "Recommended duration",
+      "coach_type": "Your coach style",
+      "start": "Start my challenge",
+      "days_label": "{{days}} Days"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "Create a challenge",
+      "select_niche": "Choose your focus area",
+      "set_goal": "What's your goal?",
+      "goal_placeholder": "Be specific — the more detail, the better your plan",
+      "select_duration": "Choose duration",
+      "select_coach": "Choose your AI coach",
+      "launch": "Launch challenge",
+      "creating": "Building your AI plan…",
+      "duration_days": "{{days}} Days",
+      "locked_duration": "Upgrade to unlock",
+      "step_of": "Step {{current}} of {{total}}"
+    },
+    "card": {
+      "day_of": "Day {{current}} of {{total}}",
+      "streak": "{{count}} day streak",
+      "completed": "{{count}} completed",
+      "active": "Active",
+      "completed_status": "Completed",
+      "abandoned": "Abandoned",
+      "paused": "Paused",
+      "resume": "Resume",
+      "view": "View challenge",
+      "complete_day": "Complete today",
+      "days_left": "{{count}} days left"
+    },
+    "empty": {
+      "title": "No active challenges",
+      "subtitle": "Start a challenge to begin your transformation",
+      "cta": "Create challenge"
+    }
+  },
+  "today": {
+    "greeting_morning": "Good morning, {{name}} ☀️",
+    "greeting_afternoon": "Good afternoon, {{name}} 🌤️",
+    "greeting_evening": "Good evening, {{name}} 🌙",
+    "todays_task": "Today's Task",
+    "day_label": "Day {{day}}",
+    "time_required": "Time required",
+    "steps": "Steps",
+    "motivational_note": "Coach's note",
+    "check_in": "Check-in question",
+    "mark_done": "Mark as done ✓",
+    "already_done": "Done for today!",
+    "loading_task": "Loading your task…",
+    "no_challenge": "No active challenge. Start one to see today's task."
+  },
+  "report": {
+    "title": "Today's Report",
+    "score": "Score",
+    "out_of_10": "/ 10",
+    "progress_insight": "Progress insight",
+    "motivational_message": "Message from your coach",
+    "tomorrow_preview": "Tomorrow's preview",
+    "loading": "Generating your report…",
+    "days_completed": "Days completed",
+    "current_streak": "Current streak",
+    "completion_rate": "Completion rate",
+    "generate": "Generate report"
+  },
+  "coach": {
+    "title": "AI Coach",
+    "placeholder": "Ask your coach anything…",
+    "send": "Send",
+    "thinking": "Coach is thinking…",
+    "disclaimer": "Powered by Lumio AI",
+    "context_label": "Challenge context",
+    "history_empty": "Start a conversation with your coach",
+    "error": "Coach is unavailable. Please try again."
+  },
+  "community": {
+    "title": "Community",
+    "feed_all": "All",
+    "feed_following": "Following",
+    "new_post": "Share your progress",
+    "post_placeholder": "What did you accomplish today?",
+    "post_submit": "Post",
+    "ai_draft": "✨ Draft with AI",
+    "like": "Like",
+    "comment": "Comment",
+    "flag": "Report",
+    "delete": "Delete",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "comments_title": "Comments",
+    "comment_placeholder": "Add a comment…",
+    "comment_submit": "Post",
+    "no_posts": "No posts yet. Be the first!",
+    "load_more": "Load more",
+    "posted_at": "{{time}} ago",
+    "flagged": "Post reported",
+    "post_deleted": "Post deleted",
+    "requires_starter": "Commenting requires Starter plan or above"
+  },
+  "journey": {
+    "title": "Your Journey",
+    "timeline": "Timeline",
+    "milestones": "Milestones",
+    "day_label": "Day {{day}}",
+    "completed_day": "Completed",
+    "skipped_day": "Skipped",
+    "upcoming_day": "Upcoming",
+    "notes_label": "Notes",
+    "no_notes": "No notes yet",
+    "streak_record": "Best streak: {{count}} days",
+    "total_completed": "Total days completed: {{count}}"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "active_challenges": "Active Challenges",
+    "points": "Points",
+    "streak": "Streak",
+    "rank": "Rank",
+    "leaderboard": "Leaderboard",
+    "badges": "Badges",
+    "no_badges": "Complete challenges to earn badges",
+    "recent_activity": "Recent Activity",
+    "start_challenge": "Start a challenge",
+    "upgrade_cta": "Upgrade for more features"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "name": "Name",
+    "email": "Email",
+    "language": "Language",
+    "theme": "Theme",
+    "notifications": "Notifications",
+    "plan": "Plan",
+    "referral": "Referral",
+    "referral_code": "Your referral code",
+    "referral_copy": "Copy link",
+    "referral_copied": "Copied!",
+    "save": "Save changes",
+    "saved": "Saved",
+    "danger_zone": "Danger Zone",
+    "delete_account": "Delete account",
+    "delete_confirm": "Are you sure? This cannot be undone.",
+    "current_plan": "Current plan: {{plan}}",
+    "upgrade": "Upgrade plan"
+  },
+  "pricing": {
+    "title": "Choose your plan",
+    "subtitle": "Unlock your full potential",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "cta": "Get started"
+    },
+    "starter": {
+      "name": "Starter",
+      "price": "$5",
+      "period": "/ month",
+      "cta": "Start for free"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9",
+      "period": "/ month",
+      "cta": "Go Pro",
+      "badge": "Most popular"
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "$19",
+      "period": "/ month",
+      "cta": "Go Elite"
+    },
+    "feature_included": "Included",
+    "feature_excluded": "Not included",
+    "billed_monthly": "Billed monthly",
+    "billed_annually": "Billed annually",
+    "save_percent": "Save {{percent}}%"
+  },
+  "landing": {
+    "hero_headline": "Illuminate\nYour Growth",
+    "hero_sub": "The world's most advanced AI-powered life challenge platform.",
+    "hero_cta": "Start free",
+    "hero_cta_secondary": "See how it works",
+    "features_title": "Everything you need to transform your life",
+    "social_proof": "Join {{count}}+ people already transforming their lives",
+    "testimonials_title": "What challengers say"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Check your connection.",
+    "not_found": "Page not found.",
+    "unauthorized": "Please sign in to continue.",
+    "plan_limit": "This feature requires a higher plan.",
+    "ai_unavailable": "AI is temporarily unavailable. Please try again.",
+    "rate_limit": "Daily limit reached. Upgrade for more.",
+    "validation": "Please check your input and try again."
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "or": "or",
+    "and": "and",
+    "yes": "Yes",
+    "no": "No",
+    "upgrade": "Upgrade",
+    "learn_more": "Learn more",
+    "copied": "Copied!",
+    "day": "day",
+    "days": "days",
+    "points": "points",
+    "free": "Free"
+  },
+  "moods": {
+    "gold": "Ambitious",
+    "fire": "Intense",
+    "ocean": "Focused",
+    "forest": "Grounded",
+    "violet": "Creative",
+    "rose": "Nurturing",
+    "cosmic": "Transcendent",
+    "arctic": "Clear"
+  }
+}

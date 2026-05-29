@@ -1,0 +1,153 @@
+/*
+ * RTL Layout Support
+ * Applied when <body class="rtl"> is set (ar, ur languages).
+ * Uses logical properties where possible; explicit overrides where needed.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ── Base direction ────────────────────────────────────────────────────────── */
+[dir='rtl'] {
+  text-align: right;
+}
+
+/* ── Typography ────────────────────────────────────────────────────────────── */
+[dir='rtl'] body,
+[dir='rtl'] input,
+[dir='rtl'] textarea,
+[dir='rtl'] select {
+  font-family: var(--font-body), 'Noto Naskh Arabic', 'Scheherazade New', serif;
+  letter-spacing: 0; /* Arabic/Urdu don't use tracking */
+}
+
+[dir='rtl'] .font-display,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3 {
+  font-family: var(--font-display), 'Noto Kufi Arabic', sans-serif;
+}
+
+/* ── Flex direction flip ───────────────────────────────────────────────────── */
+[dir='rtl'] .flex-row   { flex-direction: row-reverse; }
+[dir='rtl'] .flex-start { justify-content: flex-end; }
+[dir='rtl'] .flex-end   { justify-content: flex-start; }
+
+/* Nav, header, toolbar rows that use flex */
+[dir='rtl'] header,
+[dir='rtl'] nav,
+[dir='rtl'] [role='toolbar'] {
+  flex-direction: row-reverse;
+}
+
+/* ── Text alignment ────────────────────────────────────────────────────────── */
+[dir='rtl'] p,
+[dir='rtl'] li,
+[dir='rtl'] label,
+[dir='rtl'] span:not(.emoji) {
+  text-align: right;
+}
+
+[dir='rtl'] .text-center { text-align: center; }
+
+/* ── Margin / padding logical flips ───────────────────────────────────────── */
+/* Where inline-start/end are not supported, override explicit sides */
+[dir='rtl'] .ml-auto { margin-left: unset; margin-right: auto; }
+[dir='rtl'] .mr-auto { margin-right: unset; margin-left: auto; }
+
+/* Icon + label combos — gap direction handled by flex-direction: row-reverse */
+
+/* ── Inputs & forms ────────────────────────────────────────────────────────── */
+[dir='rtl'] input,
+[dir='rtl'] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Placeholder alignment */
+[dir='rtl'] input::placeholder,
+[dir='rtl'] textarea::placeholder {
+  text-align: right;
+}
+
+/* ── Scrollbar (cosmetic — WebKit) ─────────────────────────────────────────── */
+[dir='rtl'] ::-webkit-scrollbar {
+  /* Keep default — RTL pages still scroll normally */
+}
+
+/* ── Navigation tabs / bottom bar ─────────────────────────────────────────── */
+[dir='rtl'] [role='tablist'] {
+  flex-direction: row-reverse;
+}
+
+/* ── Cards and list items ──────────────────────────────────────────────────── */
+[dir='rtl'] .card-row {
+  flex-direction: row-reverse;
+}
+
+/* ── Community feed ────────────────────────────────────────────────────────── */
+[dir='rtl'] .post-header {
+  flex-direction: row-reverse;
+}
+
+[dir='rtl'] .post-actions {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+/* ── Challenge tabs ────────────────────────────────────────────────────────── */
+[dir='rtl'] .challenge-tabs {
+  flex-direction: row-reverse;
+}
+
+/* ── Niche accordion ───────────────────────────────────────────────────────── */
+[dir='rtl'] .accordion-header {
+  flex-direction: row-reverse;
+}
+
+[dir='rtl'] .accordion-chevron {
+  transform: scaleX(-1);
+}
+
+/* ── Badge / pill with icon ────────────────────────────────────────────────── */
+[dir='rtl'] .badge-row {
+  flex-direction: row-reverse;
+}
+
+/* ── Mood panel ────────────────────────────────────────────────────────────── */
+[dir='rtl'] .mood-grid {
+  direction: ltr; /* Grid of emoji buttons — keep LTR order */
+}
+
+/* ── Progress ring label ───────────────────────────────────────────────────── */
+[dir='rtl'] .ring-label {
+  text-align: center; /* always centered regardless of dir */
+}
+
+/* ── Streak badge ──────────────────────────────────────────────────────────── */
+[dir='rtl'] .streak-badge {
+  flex-direction: row-reverse;
+}
+
+/* ── Auth forms ────────────────────────────────────────────────────────────── */
+[dir='rtl'] .auth-card {
+  text-align: right;
+}
+
+[dir='rtl'] .auth-card a {
+  display: inline-block;
+}
+
+/* ── Settings rows ─────────────────────────────────────────────────────────── */
+[dir='rtl'] .settings-row {
+  flex-direction: row-reverse;
+}
+
+/* ── Toast notifications ───────────────────────────────────────────────────── */
+[dir='rtl'] [data-sonner-toast] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Transitions (keep smooth on dir change) ───────────────────────────────── */
+body {
+  transition: direction 0s; /* direction is not animatable; instant switch is correct */
+}

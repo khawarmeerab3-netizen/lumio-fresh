@@ -1,0 +1,330 @@
+{
+  "_note": "NATIVE SPEAKER REVIEW REQUIRED before production. Translations are accurate but tone/register should be verified.",
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "today": "اليوم",
+    "report": "التقرير",
+    "coach": "المدرب",
+    "community": "المجتمع",
+    "journey": "الرحلة",
+    "settings": "الإعدادات",
+    "pricing": "الأسعار",
+    "logout": "تسجيل الخروج",
+    "back": "رجوع"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "tagline": "أضِئ نموّك",
+      "email": "البريد الإلكتروني",
+      "email_placeholder": "أنت@مثال.com",
+      "password": "كلمة المرور",
+      "password_placeholder": "••••••••",
+      "submit": "تسجيل الدخول",
+      "no_account": "ليس لديك حساب؟",
+      "create_one": "أنشئ واحدًا",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "error_invalid": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+      "error_generic": "حدث خطأ ما. يرجى المحاولة مجددًا."
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "tagline": "ابدأ تحوّلك",
+      "name": "اسمك",
+      "name_placeholder": "أحمد محمد",
+      "email": "البريد الإلكتروني",
+      "email_placeholder": "أنت@مثال.com",
+      "password": "كلمة المرور",
+      "password_placeholder": "٨ أحرف على الأقل",
+      "submit": "إنشاء حساب",
+      "have_account": "لديك حساب بالفعل؟",
+      "sign_in": "تسجيل الدخول",
+      "referral_prompt": "هل لديك رمز إحالة؟",
+      "referral_code": "رمز الإحالة",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "أنت تسجل للاشتراك في {{plan}}",
+      "error_exists": "يوجد حساب بهذا البريد الإلكتروني بالفعل",
+      "error_generic": "فشل التسجيل. يرجى المحاولة مجددًا."
+    },
+    "validation": {
+      "email_required": "أدخل بريدًا إلكترونيًا صالحًا",
+      "password_min": "يجب أن تكون كلمة المرور ٨ أحرف على الأقل",
+      "name_required": "الاسم مطلوب"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "اختر لغتك",
+      "subtitle": "سيكون لوميو مترجمًا بالكامل إلى لغتك"
+    },
+    "quiz": {
+      "title": "لنخصّص رحلتك",
+      "subtitle": "٥ أسئلة سريعة لبناء تحديّك المثالي",
+      "step_of": "الخطوة {{current}} من {{total}}",
+      "life_area": {
+        "label": "ما هو مجال الحياة الذي تريد تحسينه أكثر؟",
+        "options": {
+          "fitness": "اللياقة والصحة",
+          "mindset": "العقلية والعادات",
+          "business": "الأعمال والمهنة",
+          "learning": "التعلم والمهارات",
+          "relationships": "العلاقات",
+          "creativity": "الإبداع",
+          "finance": "المال",
+          "spirituality": "الروحانية"
+        }
+      },
+      "goal": {
+        "label": "صف هدفك في جملة واحدة",
+        "placeholder": "مثال: أريد بناء عادة تأمل يومية"
+      },
+      "time_available": {
+        "label": "كم من الوقت يمكنك تخصيصه يوميًا؟",
+        "options": {
+          "15min": "١٥ دقيقة",
+          "30min": "٣٠ دقيقة",
+          "1hr": "ساعة واحدة",
+          "2hr": "ساعتان أو أكثر"
+        }
+      },
+      "experience": {
+        "label": "ما مستوى خبرتك؟",
+        "options": {
+          "beginner": "مبتدئ — أبدأ للتو",
+          "some": "بعض الخبرة",
+          "intermediate": "متوسط",
+          "advanced": "متقدم"
+        }
+      },
+      "motivation_style": {
+        "label": "ما الذي يحفزك أكثر؟",
+        "options": {
+          "accountability": "المساءلة والمتابعة",
+          "rewards": "المكافآت والإنجازات",
+          "community": "دعم المجتمع",
+          "data": "البيانات ورسوم التقدم",
+          "ai_coach": "توجيه مدرب الذكاء الاصطناعي"
+        }
+      },
+      "submit": "احصل على توصياتي ←",
+      "loading": "جارٍ بناء خطتك الشخصية…",
+      "next": "التالي",
+      "back": "رجوع"
+    },
+    "recommendation": {
+      "title": "توصياتك الشخصية",
+      "top_niches": "أفضل التحديات لك",
+      "duration": "المدة الموصى بها",
+      "coach_type": "أسلوب مدربك",
+      "start": "ابدأ تحديّي",
+      "days_label": "{{days}} أيام"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "إنشاء تحدٍّ",
+      "select_niche": "اختر مجال تركيزك",
+      "set_goal": "ما هو هدفك؟",
+      "goal_placeholder": "كن محددًا — كلما زادت التفاصيل، كانت خطتك أفضل",
+      "select_duration": "اختر المدة",
+      "select_coach": "اختر مدرب الذكاء الاصطناعي",
+      "launch": "إطلاق التحدي",
+      "creating": "جارٍ بناء خطتك بالذكاء الاصطناعي…",
+      "duration_days": "{{days}} أيام",
+      "locked_duration": "ترقّ لفتح الميزة",
+      "step_of": "الخطوة {{current}} من {{total}}"
+    },
+    "card": {
+      "day_of": "اليوم {{current}} من {{total}}",
+      "streak": "{{count}} أيام متتالية",
+      "completed": "{{count}} مكتملة",
+      "active": "نشط",
+      "completed_status": "مكتمل",
+      "abandoned": "متروك",
+      "paused": "متوقف",
+      "resume": "استئناف",
+      "view": "عرض التحدي",
+      "complete_day": "أكمل اليوم",
+      "days_left": "{{count}} أيام متبقية"
+    },
+    "empty": {
+      "title": "لا توجد تحديات نشطة",
+      "subtitle": "ابدأ تحديًا لبدء تحولك",
+      "cta": "إنشاء تحدٍّ"
+    }
+  },
+  "today": {
+    "greeting_morning": "صباح الخير، {{name}} ☀️",
+    "greeting_afternoon": "مساء الخير، {{name}} 🌤️",
+    "greeting_evening": "مساء النور، {{name}} 🌙",
+    "todays_task": "مهمة اليوم",
+    "day_label": "اليوم {{day}}",
+    "time_required": "الوقت المطلوب",
+    "steps": "الخطوات",
+    "motivational_note": "ملاحظة المدرب",
+    "check_in": "سؤال المتابعة",
+    "mark_done": "وضع علامة مكتمل ✓",
+    "already_done": "تم لهذا اليوم!",
+    "loading_task": "جارٍ تحميل مهمتك…",
+    "no_challenge": "لا يوجد تحدٍّ نشط. ابدأ واحدًا لرؤية مهمة اليوم."
+  },
+  "report": {
+    "title": "تقرير اليوم",
+    "score": "النتيجة",
+    "out_of_10": "/ ١٠",
+    "progress_insight": "تحليل التقدم",
+    "motivational_message": "رسالة من مدربك",
+    "tomorrow_preview": "معاينة الغد",
+    "loading": "جارٍ إنشاء تقريرك…",
+    "days_completed": "الأيام المكتملة",
+    "current_streak": "السلسلة الحالية",
+    "completion_rate": "معدل الإنجاز",
+    "generate": "إنشاء التقرير"
+  },
+  "coach": {
+    "title": "مدرب الذكاء الاصطناعي",
+    "placeholder": "اسأل مدربك أي شيء…",
+    "send": "إرسال",
+    "thinking": "المدرب يفكر…",
+    "disclaimer": "مدعوم بـ Lumio AI",
+    "context_label": "سياق التحدي",
+    "history_empty": "ابدأ محادثة مع مدربك",
+    "error": "المدرب غير متاح. يرجى المحاولة مجددًا."
+  },
+  "community": {
+    "title": "المجتمع",
+    "feed_all": "الكل",
+    "feed_following": "المتابَعون",
+    "new_post": "شارك تقدمك",
+    "post_placeholder": "ماذا أنجزت اليوم؟",
+    "post_submit": "نشر",
+    "ai_draft": "✨ صياغة بالذكاء الاصطناعي",
+    "like": "إعجاب",
+    "comment": "تعليق",
+    "flag": "إبلاغ",
+    "delete": "حذف",
+    "follow": "متابعة",
+    "unfollow": "إلغاء المتابعة",
+    "comments_title": "التعليقات",
+    "comment_placeholder": "أضف تعليقًا…",
+    "comment_submit": "نشر",
+    "no_posts": "لا توجد منشورات حتى الآن. كن الأول!",
+    "load_more": "تحميل المزيد",
+    "posted_at": "منذ {{time}}",
+    "flagged": "تم الإبلاغ عن المنشور",
+    "post_deleted": "تم حذف المنشور",
+    "requires_starter": "التعليق يتطلب خطة Starter أو أعلى"
+  },
+  "journey": {
+    "title": "رحلتك",
+    "timeline": "الجدول الزمني",
+    "milestones": "الإنجازات",
+    "day_label": "اليوم {{day}}",
+    "completed_day": "مكتمل",
+    "skipped_day": "تم تخطيه",
+    "upcoming_day": "قادم",
+    "notes_label": "الملاحظات",
+    "no_notes": "لا توجد ملاحظات حتى الآن",
+    "streak_record": "أفضل سلسلة: {{count}} أيام",
+    "total_completed": "إجمالي الأيام المكتملة: {{count}}"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "active_challenges": "التحديات النشطة",
+    "points": "النقاط",
+    "streak": "السلسلة",
+    "rank": "الترتيب",
+    "leaderboard": "لوحة الصدارة",
+    "badges": "الشارات",
+    "no_badges": "أكمل التحديات لكسب الشارات",
+    "recent_activity": "النشاط الأخير",
+    "start_challenge": "ابدأ تحديًا",
+    "upgrade_cta": "ترقَّ للحصول على المزيد من الميزات"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "language": "اللغة",
+    "theme": "المظهر",
+    "notifications": "الإشعارات",
+    "plan": "الخطة",
+    "referral": "الإحالة",
+    "referral_code": "رمز إحالتك",
+    "referral_copy": "نسخ الرابط",
+    "referral_copied": "تم النسخ!",
+    "save": "حفظ التغييرات",
+    "saved": "تم الحفظ",
+    "danger_zone": "منطقة الخطر",
+    "delete_account": "حذف الحساب",
+    "delete_confirm": "هل أنت متأكد؟ لا يمكن التراجع عن هذا.",
+    "current_plan": "الخطة الحالية: {{plan}}",
+    "upgrade": "ترقية الخطة"
+  },
+  "pricing": {
+    "title": "اختر خطتك",
+    "subtitle": "أطلق العنان لإمكاناتك الكاملة",
+    "free": { "name": "مجاني", "price": "$٠", "period": "للأبد", "cta": "ابدأ" },
+    "starter": { "name": "ستارتر", "price": "$٥", "period": "/ شهر", "cta": "ابدأ مجانًا" },
+    "pro": { "name": "برو", "price": "$٩", "period": "/ شهر", "cta": "انتقل إلى برو", "badge": "الأكثر شيوعًا" },
+    "elite": { "name": "إيليت", "price": "$١٩", "period": "/ شهر", "cta": "انتقل إلى إيليت" },
+    "feature_included": "مضمّن",
+    "feature_excluded": "غير مضمّن",
+    "billed_monthly": "يُدفع شهريًا",
+    "billed_annually": "يُدفع سنويًا",
+    "save_percent": "وفّر {{percent}}%"
+  },
+  "landing": {
+    "hero_headline": "أضِئ\nنموّك",
+    "hero_sub": "أكثر منصات تحديات الحياة تطورًا، مدعومة بالذكاء الاصطناعي.",
+    "hero_cta": "ابدأ مجانًا",
+    "hero_cta_secondary": "شاهد كيف يعمل",
+    "features_title": "كل ما تحتاجه لتحويل حياتك",
+    "social_proof": "انضم إلى أكثر من {{count}} شخص يحولون حياتهم",
+    "testimonials_title": "ما يقوله المشاركون"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما. يرجى المحاولة مجددًا.",
+    "network": "خطأ في الشبكة. تحقق من اتصالك.",
+    "not_found": "الصفحة غير موجودة.",
+    "unauthorized": "يرجى تسجيل الدخول للمتابعة.",
+    "plan_limit": "هذه الميزة تتطلب خطة أعلى.",
+    "ai_unavailable": "الذكاء الاصطناعي غير متاح مؤقتًا. يرجى المحاولة مجددًا.",
+    "rate_limit": "تم الوصول إلى الحد اليومي. ترقَّ للحصول على المزيد.",
+    "validation": "يرجى التحقق من مدخلاتك والمحاولة مجددًا."
+  },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "done": "تم",
+    "or": "أو",
+    "and": "و",
+    "yes": "نعم",
+    "no": "لا",
+    "upgrade": "ترقية",
+    "learn_more": "اعرف المزيد",
+    "copied": "تم النسخ!",
+    "day": "يوم",
+    "days": "أيام",
+    "points": "نقاط",
+    "free": "مجاني"
+  },
+  "moods": {
+    "gold": "طموح",
+    "fire": "متوهج",
+    "ocean": "مركّز",
+    "forest": "راسخ",
+    "violet": "مبدع",
+    "rose": "حنون",
+    "cosmic": "متسامٍ",
+    "arctic": "صافي"
+  }
+}

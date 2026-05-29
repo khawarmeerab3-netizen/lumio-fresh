@@ -1,0 +1,351 @@
+{
+  "_note": "NATIVE SPEAKER REVIEW REQUIRED before production.",
+  "nav": {
+    "dashboard": "Gösterge Paneli",
+    "today": "Bugün",
+    "report": "Rapor",
+    "coach": "Koç",
+    "community": "Topluluk",
+    "journey": "Yolculuk",
+    "settings": "Ayarlar",
+    "pricing": "Fiyatlar",
+    "logout": "Çıkış Yap",
+    "back": "Geri"
+  },
+  "auth": {
+    "login": {
+      "title": "Giriş Yap",
+      "tagline": "Büyümeni Aydınlat",
+      "email": "E-posta",
+      "email_placeholder": "sen@ornek.com",
+      "password": "Şifre",
+      "password_placeholder": "••••••••",
+      "submit": "Giriş Yap",
+      "no_account": "Hesabın yok mu?",
+      "create_one": "Oluştur",
+      "forgot_password": "Şifreni mi unuttun?",
+      "error_invalid": "Geçersiz e-posta veya şifre",
+      "error_generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+    },
+    "register": {
+      "title": "Hesap Oluştur",
+      "tagline": "Dönüşümünü Başlat",
+      "name": "Adın",
+      "name_placeholder": "Ahmet Yılmaz",
+      "email": "E-posta",
+      "email_placeholder": "sen@ornek.com",
+      "password": "Şifre",
+      "password_placeholder": "En az 8 karakter",
+      "submit": "Hesap Oluştur",
+      "have_account": "Zaten hesabın var mı?",
+      "sign_in": "Giriş Yap",
+      "referral_prompt": "Referans kodun var mı?",
+      "referral_code": "Referans Kodu",
+      "referral_placeholder": "LUMIO-XXXXXXXX",
+      "plan_context": "{{plan}} için kaydoluyorsunuz",
+      "error_exists": "Bu e-posta ile hesap zaten mevcut",
+      "error_generic": "Kayıt başarısız. Lütfen tekrar deneyin."
+    },
+    "validation": {
+      "email_required": "Geçerli bir e-posta girin",
+      "password_min": "Şifre en az 8 karakter olmalıdır",
+      "name_required": "Ad zorunludur"
+    }
+  },
+  "onboarding": {
+    "language_step": {
+      "title": "Dilinizi seçin",
+      "subtitle": "Lumio dilinize tamamen çevrilecek"
+    },
+    "quiz": {
+      "title": "Yolculuğunu kişiselleştirelim",
+      "subtitle": "Mükemmel meydan okumanı oluşturmak için 5 hızlı soru",
+      "step_of": "Adım {{current}} / {{total}}",
+      "life_area": {
+        "label": "Hayatın hangi alanını en çok geliştirmek istiyorsun?",
+        "options": {
+          "fitness": "Fitness ve Sağlık",
+          "mindset": "Zihniyet ve Alışkanlıklar",
+          "business": "İş ve Kariyer",
+          "learning": "Öğrenme ve Beceriler",
+          "relationships": "İlişkiler",
+          "creativity": "Yaratıcılık",
+          "finance": "Finans",
+          "spirituality": "Maneviyat"
+        }
+      },
+      "goal": {
+        "label": "Hedefini bir cümleyle anlat",
+        "placeholder": "örn. Günlük meditasyon alışkanlığı edinmek istiyorum"
+      },
+      "time_available": {
+        "label": "Her gün ne kadar zaman ayırabilirsin?",
+        "options": {
+          "15min": "15 dakika",
+          "30min": "30 dakika",
+          "1hr": "1 saat",
+          "2hr": "2+ saat"
+        }
+      },
+      "experience": {
+        "label": "Deneyim seviyeniz nedir?",
+        "options": {
+          "beginner": "Başlangıç — yeni başlıyorum",
+          "some": "Biraz deneyim",
+          "intermediate": "Orta seviye",
+          "advanced": "İleri seviye"
+        }
+      },
+      "motivation_style": {
+        "label": "Seni en çok ne motive eder?",
+        "options": {
+          "accountability": "Sorumluluk ve takip",
+          "rewards": "Ödüller ve kilometre taşları",
+          "community": "Topluluk desteği",
+          "data": "Veri ve ilerleme grafikleri",
+          "ai_coach": "AI koç rehberliği"
+        }
+      },
+      "submit": "Tavsiyelerimi Al →",
+      "loading": "Kişisel planın hazırlanıyor…",
+      "next": "İleri",
+      "back": "Geri"
+    },
+    "recommendation": {
+      "title": "Kişisel Tavsiyeleriniz",
+      "top_niches": "Senin için en iyi meydan okumalar",
+      "duration": "Önerilen süre",
+      "coach_type": "Koç stilin",
+      "start": "Meydan okumamı başlat",
+      "days_label": "{{days}} Gün"
+    }
+  },
+  "challenge": {
+    "create": {
+      "title": "Meydan Okuma Oluştur",
+      "select_niche": "Odak alanını seç",
+      "set_goal": "Hedefiniz nedir?",
+      "goal_placeholder": "Somut ol — ne kadar ayrıntılı, o kadar iyi plan",
+      "select_duration": "Süre seç",
+      "select_coach": "AI koçunu seç",
+      "launch": "Meydan Okumayı Başlat",
+      "creating": "AI planın hazırlanıyor…",
+      "duration_days": "{{days}} Gün",
+      "locked_duration": "Açmak için yükselt",
+      "step_of": "Adım {{current}} / {{total}}"
+    },
+    "card": {
+      "day_of": "Gün {{current}} / {{total}}",
+      "streak": "{{count}} günlük seri",
+      "completed": "{{count}} tamamlandı",
+      "active": "Aktif",
+      "completed_status": "Tamamlandı",
+      "abandoned": "Terk Edildi",
+      "paused": "Duraklatıldı",
+      "resume": "Devam Et",
+      "view": "Meydan okumayı gör",
+      "complete_day": "Bugünü tamamla",
+      "days_left": "{{count}} gün kaldı"
+    },
+    "empty": {
+      "title": "Aktif meydan okuma yok",
+      "subtitle": "Dönüşümünü başlatmak için bir meydan okuma başlat",
+      "cta": "Meydan Okuma Oluştur"
+    }
+  },
+  "today": {
+    "greeting_morning": "Günaydın, {{name}} ☀️",
+    "greeting_afternoon": "İyi günler, {{name}} 🌤️",
+    "greeting_evening": "İyi akşamlar, {{name}} 🌙",
+    "todays_task": "Bugünün Görevi",
+    "day_label": "Gün {{day}}",
+    "time_required": "Gereken süre",
+    "steps": "Adımlar",
+    "motivational_note": "Koçun notu",
+    "check_in": "Kontrol sorusu",
+    "mark_done": "Tamamlandı olarak işaretle ✓",
+    "already_done": "Bugün için tamam!",
+    "loading_task": "Görevin yükleniyor…",
+    "no_challenge": "Aktif meydan okuma yok. Bugünün görevini görmek için bir tane başlat."
+  },
+  "report": {
+    "title": "Bugünün Raporu",
+    "score": "Puan",
+    "out_of_10": "/ 10",
+    "progress_insight": "İlerleme analizi",
+    "motivational_message": "Koçundan mesaj",
+    "tomorrow_preview": "Yarının önizlemesi",
+    "loading": "Rapor oluşturuluyor…",
+    "days_completed": "Tamamlanan günler",
+    "current_streak": "Mevcut seri",
+    "completion_rate": "Tamamlanma oranı",
+    "generate": "Rapor Oluştur"
+  },
+  "coach": {
+    "title": "AI Koç",
+    "placeholder": "Koçuna her şeyi sor…",
+    "send": "Gönder",
+    "thinking": "Koç düşünüyor…",
+    "disclaimer": "Lumio AI ile çalışır",
+    "context_label": "Meydan okuma bağlamı",
+    "history_empty": "Koçunla konuşmayı başlat",
+    "error": "Koç şu an müsait değil. Lütfen tekrar deneyin."
+  },
+  "community": {
+    "title": "Topluluk",
+    "feed_all": "Hepsi",
+    "feed_following": "Takip Edilenler",
+    "new_post": "İlerlemeni paylaş",
+    "post_placeholder": "Bugün ne başardın?",
+    "post_submit": "Paylaş",
+    "ai_draft": "✨ AI ile Taslak",
+    "like": "Beğen",
+    "comment": "Yorum",
+    "flag": "Bildir",
+    "delete": "Sil",
+    "follow": "Takip Et",
+    "unfollow": "Takibi Bırak",
+    "comments_title": "Yorumlar",
+    "comment_placeholder": "Yorum ekle…",
+    "comment_submit": "Paylaş",
+    "no_posts": "Henüz gönderi yok. İlk sen ol!",
+    "load_more": "Daha fazla yükle",
+    "posted_at": "{{time}} önce",
+    "flagged": "Gönderi bildirildi",
+    "post_deleted": "Gönderi silindi",
+    "requires_starter": "Yorum için Starter plan veya üzeri gerekli"
+  },
+  "journey": {
+    "title": "Yolculuğun",
+    "timeline": "Zaman Çizelgesi",
+    "milestones": "Kilometre Taşları",
+    "day_label": "Gün {{day}}",
+    "completed_day": "Tamamlandı",
+    "skipped_day": "Atlandı",
+    "upcoming_day": "Yaklaşan",
+    "notes_label": "Notlar",
+    "no_notes": "Henüz not yok",
+    "streak_record": "En iyi seri: {{count}} gün",
+    "total_completed": "Toplam tamamlanan gün: {{count}}"
+  },
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "active_challenges": "Aktif Meydan Okumalar",
+    "points": "Puan",
+    "streak": "Seri",
+    "rank": "Sıra",
+    "leaderboard": "Sıralama Tablosu",
+    "badges": "Rozetler",
+    "no_badges": "Rozet kazanmak için meydan okumaları tamamla",
+    "recent_activity": "Son Aktivite",
+    "start_challenge": "Meydan okuma başlat",
+    "upgrade_cta": "Daha fazla özellik için yükselt"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "profile": "Profil",
+    "name": "Ad",
+    "email": "E-posta",
+    "language": "Dil",
+    "theme": "Tema",
+    "notifications": "Bildirimler",
+    "plan": "Plan",
+    "referral": "Referans",
+    "referral_code": "Referans kodun",
+    "referral_copy": "Bağlantıyı Kopyala",
+    "referral_copied": "Kopyalandı!",
+    "save": "Değişiklikleri Kaydet",
+    "saved": "Kaydedildi",
+    "danger_zone": "Tehlikeli Bölge",
+    "delete_account": "Hesabı Sil",
+    "delete_confirm": "Emin misin? Bu geri alınamaz.",
+    "current_plan": "Mevcut plan: {{plan}}",
+    "upgrade": "Planı Yükselt"
+  },
+  "pricing": {
+    "title": "Planını seç",
+    "subtitle": "Tüm potansiyelini ortaya çıkar",
+    "free": {
+      "name": "Ücretsiz",
+      "price": "$0",
+      "period": "sonsuza kadar",
+      "cta": "Başla"
+    },
+    "starter": {
+      "name": "Başlangıç",
+      "price": "$5",
+      "period": "/ ay",
+      "cta": "Ücretsiz başla"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9",
+      "period": "/ ay",
+      "cta": "Pro Ol",
+      "badge": "En popüler"
+    },
+    "elite": {
+      "name": "Elite",
+      "price": "$19",
+      "period": "/ ay",
+      "cta": "Elite Ol"
+    },
+    "feature_included": "Dahil",
+    "feature_excluded": "Dahil değil",
+    "billed_monthly": "Aylık faturalandırılır",
+    "billed_annually": "Yıllık faturalandırılır",
+    "save_percent": "%{{percent}} tasarruf et"
+  },
+  "landing": {
+    "hero_headline": "Büyümeni\nAydınlat",
+    "hero_sub": "Yapay zeka destekli en gelişmiş yaşam meydan okuma platformu.",
+    "hero_cta": "Ücretsiz Başla",
+    "hero_cta_secondary": "Nasıl çalıştığını gör",
+    "features_title": "Hayatını dönüştürmek için ihtiyacın olan her şey",
+    "social_proof": "Hayatlarını dönüştüren {{count}}+ kişiye katıl",
+    "testimonials_title": "Katılımcılar ne diyor"
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "network": "Ağ hatası. Bağlantınızı kontrol edin.",
+    "not_found": "Sayfa bulunamadı.",
+    "unauthorized": "Devam etmek için giriş yapın.",
+    "plan_limit": "Bu özellik daha yüksek bir plan gerektiriyor.",
+    "ai_unavailable": "AI geçici olarak kullanılamıyor. Lütfen tekrar deneyin.",
+    "rate_limit": "Günlük limit doldu. Daha fazlası için yükselt.",
+    "validation": "Girişinizi kontrol edin ve tekrar deneyin."
+  },
+  "common": {
+    "loading": "Yükleniyor…",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Tamam",
+    "or": "veya",
+    "and": "ve",
+    "yes": "Evet",
+    "no": "Hayır",
+    "upgrade": "Yükselt",
+    "learn_more": "Daha fazla öğren",
+    "copied": "Kopyalandı!",
+    "day": "gün",
+    "days": "gün",
+    "points": "puan",
+    "free": "Ücretsiz"
+  },
+  "moods": {
+    "gold": "Hırslı",
+    "fire": "Yoğun",
+    "ocean": "Odaklı",
+    "forest": "Sağlam",
+    "violet": "Yaratıcı",
+    "rose": "Şefkatli",
+    "cosmic": "Aşkın",
+    "arctic": "Berrak"
+  }
+}

@@ -1,0 +1,38 @@
+# Lumio — robots.txt
+# https://lumio.app/robots.txt
+
+User-agent: *
+
+# Allow all public marketing pages
+Allow: /
+Allow: /pricing
+Allow: /features
+Allow: /features/
+Allow: /challenges/
+Allow: /login
+Allow: /signup
+Allow: /privacy
+Allow: /terms
+Allow: /cookies
+
+# Block all authenticated app routes — these are personalised and should
+# not be indexed, plus they redirect to /login without a valid session
+Disallow: /dashboard
+Disallow: /challenges/*/
+Disallow: /memory/
+Disallow: /analytics/
+Disallow: /community/
+Disallow: /settings/
+Disallow: /notifications/
+Disallow: /admin/
+Disallow: /onboarding/
+
+# Block API endpoints
+Disallow: /api/
+
+# Block Next.js internals
+Disallow: /_next/
+Disallow: /_vercel/
+
+# Sitemap location
+Sitemap: https://lumio.app/sitemap.xml
