@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {Get-ChildItem -Path E:\lumio\shared -Recurse -Filter "mood*"
+const nextConfig = {
   output: 'standalone',
   transpilePackages: ['../shared', '../../shared'],
 
