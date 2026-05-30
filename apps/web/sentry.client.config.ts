@@ -2,6 +2,7 @@
 // Phase 28: Sentry Client-Side Configuration
 
 import * as Sentry from '@sentry/nextjs';
+import { replayIntegration } from '@sentry/nextjs';
 
 Sentry.init({
   // Sentry project DSN (must be public, safe to expose)
@@ -15,12 +16,10 @@ Sentry.init({
 
   // Performance Monitoring
   integrations: [
-    new Sentry.Replay({
-      // Mask all text content for privacy
+    replayIntegration({
       maskAllText: true,
-      // Block all media (images, videos)
       blockAllMedia: true,
-    }),
+    })
   ],
 
   // Sampling rates (lower in production to reduce costs)
