@@ -18,7 +18,7 @@ Sentry.init({
 
   // Server integrations
   integrations: [
-    new Sentry.Integrations.Http({ tracing: true }),
+    Sentry.httpIntegration({ tracing: true }),
   ],
 
   // Filter out noise
