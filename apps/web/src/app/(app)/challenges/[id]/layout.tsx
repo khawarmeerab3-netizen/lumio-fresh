@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useChallengeStore } from "@/stores/challengeStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useMoodStore } from "@/stores/moodStore";
-import { MoodFAB } from "@/components/lumio/MoodFAB";
+import MoodFAB from "@/components/lumio/MoodFAB";
 import { Ring } from "@/components/lumio/Ring";
 import { MOODS } from "@/shared/constants/moods";
 
