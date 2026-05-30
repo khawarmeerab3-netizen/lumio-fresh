@@ -13,7 +13,7 @@ interface RingProps {
   textColor: string;
 }
 
-export function Ring({
+import { Ring } from "@/components/lumio/Ring";
   done,
   total,
   size = 48,
