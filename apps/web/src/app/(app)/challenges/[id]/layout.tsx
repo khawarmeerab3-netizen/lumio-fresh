@@ -28,7 +28,7 @@ export default function ChallengeLayout({
   const router = useRouter();
   const pathname = usePathname();
   const { user } = useAuthStore();
-  const { selectedMood } = useMoodStore();
+  const { activeMood } = useMoodStore();
   const {
     activeChallenge,
     loadChallenge,
@@ -36,7 +36,7 @@ export default function ChallengeLayout({
     challengeError,
   } = useChallengeStore();
 
-  const mood = MOODS.find((m) => m.id === selectedMood) ?? MOODS[0];
+  const mood = MOODS.find((m) => m.id === activeMood) ?? MOODS[0];
 
   useEffect(() => {
     if (params.id) {
