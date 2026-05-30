@@ -180,9 +180,9 @@ function MilestoneNode({
 
 // ─── main ─────────────────────────────────────────────────────────────────────
 export default function JourneyPage() {
-  const { selectedMood } = useMoodStore();
+  const { activeMood } = useMoodStore();
   const { activeChallenge } = useChallengeStore();
-  const mood = MOODS.find((m) => m.id === selectedMood) ?? MOODS[0];
+  const mood = MOODS.find((m) => m.id === activeMood?.id) ?? MOODS[0];
 
   if (!activeChallenge) return null;
 
