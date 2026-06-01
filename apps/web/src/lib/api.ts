@@ -37,8 +37,13 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error?.response?.status === 401 && typeof window !== 'undefined') {
+    const status = error?.response?.status;
+    const url = error?.config?.url ?? '';
+    const isAuthRoute = url.includes('/api/auth/login') || url.includes('/api/auth/register');
+
+    if (status === 401 && typeof window !== 'undefined' && !isAuthRoute) {
       localStorage.removeItem('lumio-token');
+      document.cookie = 'lumio-token=; path=/; max-age=0';
       window.location.href = '/auth/login';
     }
     return Promise.reject(error);

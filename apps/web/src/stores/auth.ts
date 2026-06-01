@@ -38,6 +38,16 @@ interface AuthActions {
   onboardingComplete: () => void;
 }
 
+// ─── Cookie (middleware reads lumio-token) ──────────────────────────────────
+
+function setAuthCookie(token: string): void {
+  document.cookie = `lumio-token=${encodeURIComponent(token)}; path=/; max-age=604800; SameSite=Lax`;
+}
+
+function clearAuthCookie(): void {
+  document.cookie = 'lumio-token=; path=/; max-age=0';
+}
+
 // ─── Store ────────────────────────────────────────────────────────────────────
 
 export const useAuthStore = create<AuthState & AuthActions>()(
@@ -56,6 +66,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
           });
           const { user, token } = res.data;
           localStorage.setItem('lumio-token', token);
+          setAuthCookie(token);
           set({ user, token, isLoading: false });
         } catch (err) {
           set({ isLoading: false });
@@ -74,6 +85,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
           });
           const { user, token } = res.data;
           localStorage.setItem('lumio-token', token);
+          setAuthCookie(token);
           set({ user, token, isLoading: false });
         } catch (err) {
           set({ isLoading: false });
@@ -83,6 +95,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
 
       logout: () => {
         localStorage.removeItem('lumio-token');
+        clearAuthCookie();
         set({ user: null, token: null });
         window.location.href = '/auth/login';
       },

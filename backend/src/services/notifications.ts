@@ -144,3 +144,57 @@ export async function countNotificationsSentToday(
   if (error) return 0; // on error, assume not sent (safe default: may send)
   return count ?? 0;
 }
+
+// ─── Route helpers (buddies, followers, community, admin) ─────────────────────
+
+export async function createNotification(
+  userId: string,
+  payload: {
+    type: string;
+    title: string;
+    body: string;
+    data?: Record<string, unknown>;
+  },
+): Promise<Notification | null> {
+  return sendNotification(userId, payload.title, payload.body, 'general', {
+    ...payload.data,
+    notificationType: payload.type,
+  });
+}
+
+export async function notifyUser(payload: {
+  userId: string;
+  type: string;
+  title: string;
+  message: string;
+  data?: Record<string, unknown>;
+}): Promise<Notification | null> {
+  return sendNotification(payload.userId, payload.title, payload.message, 'general', {
+    ...payload.data,
+    notificationType: payload.type,
+  });
+}
+
+export async function broadcastNotification(
+  _type: string,
+  title: string,
+  message: string,
+  targetPlan?: string | null,
+  data?: Record<string, unknown>,
+): Promise<number> {
+  let query = supabaseAdmin.from('users').select('id');
+
+  if (targetPlan && targetPlan !== 'all') {
+    query = query.eq('plan', targetPlan);
+  }
+
+  const { data: users, error } = await query;
+  if (error || !users?.length) return 0;
+
+  let sent = 0;
+  for (const user of users) {
+    const result = await sendNotification(user.id as string, title, message, 'general', data);
+    if (result) sent += 1;
+  }
+  return sent;
+}

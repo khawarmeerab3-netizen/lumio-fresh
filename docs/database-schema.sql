@@ -7,6 +7,7 @@
 CREATE TABLE users (
   id                       uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
   email                    text        UNIQUE NOT NULL,
+  password_hash            text        NOT NULL DEFAULT '',
   name                     text        NOT NULL,
   avatar_url               text,
   plan                     text        NOT NULL DEFAULT 'free'

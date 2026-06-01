@@ -9,7 +9,7 @@ import { auth } from '../middleware/auth';
 import { requireAdmin } from '../middleware/requireAdmin';
 import { LumioError, toApiError } from '../utils/errors';
 import { getAdminSupabase } from '../utils/supabase';
-import { broadcastNotification, notifyUser } from '../utils/notifications';
+import { broadcastNotification, notifyUser } from '../services/notifications';
 import {
   generateAdminReport,
   generateBroadcastTip,

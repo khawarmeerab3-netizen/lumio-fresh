@@ -225,7 +225,7 @@ export default function LandingPage() {
             Sign In
           </Link>
           <Link
-            href="/register"
+            href="/auth/register"
             style={{
               background: 'linear-gradient(135deg,#f59e0b,#fbbf24)',
               color: '#080706',
@@ -357,7 +357,7 @@ export default function LandingPage() {
             style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 56 }}
           >
             <Link
-              href="/register"
+              href="/auth/register"
               style={{
                 background: 'linear-gradient(135deg,#f59e0b,#fbbf24)',
                 color: '#080706',
@@ -984,7 +984,7 @@ export default function LandingPage() {
             Free forever. No credit card required.
           </p>
           <Link
-            href="/register"
+            href="/auth/register"
             style={{
               background: 'linear-gradient(135deg,#f59e0b,#fbbf24)',
               color: '#080706',

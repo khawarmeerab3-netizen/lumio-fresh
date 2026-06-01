@@ -5,7 +5,7 @@
 import { Router, Request, Response } from 'express';
 import { createClient } from '@supabase/supabase-js';
 import { toApiError } from '../utils/errors';
-import type { Coach } from '../../../shared/types/coach';
+import type { Coach } from '../routes/coach';
 
 const router = Router();
 

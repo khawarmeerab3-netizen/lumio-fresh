@@ -3,8 +3,6 @@
 import { create } from 'zustand';
 import { client } from '@/lib/api';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 export interface Challenge {
   id: string;
   user_id: string;
@@ -42,21 +40,24 @@ interface ChallengeState {
   challenges: Challenge[];
   activeChallenge: Challenge | null;
   isLoading: boolean;
+  isLoadingChallenge: boolean;
+  challengeError: string | null;
 }
 
 interface ChallengeActions {
   fetchChallenges: () => Promise<void>;
   createChallenge: (payload: CreateChallengePayload) => Promise<Challenge>;
   setActive: (challenge: Challenge | null) => void;
+  loadChallenge: (id: string) => Promise<void>;
   refreshChallenge: (id: string) => Promise<void>;
 }
 
-// ─── Store ────────────────────────────────────────────────────────────────────
-
-export const useChallengeStore = create<ChallengeState & ChallengeActions>()((set, get) => ({
+export const useChallengeStore = create<ChallengeState & ChallengeActions>()((set) => ({
   challenges: [],
   activeChallenge: null,
   isLoading: false,
+  isLoadingChallenge: false,
+  challengeError: null,
 
   fetchChallenges: async () => {
     set({ isLoading: true });
@@ -89,6 +90,16 @@ export const useChallengeStore = create<ChallengeState & ChallengeActions>()((se
     set({ activeChallenge: challenge });
   },
 
+  loadChallenge: async (id) => {
+    set({ isLoadingChallenge: true, challengeError: null });
+    try {
+      const res = await client.get<{ challenge: Challenge }>(`/api/challenges/${id}`);
+      set({ activeChallenge: res.data.challenge, isLoadingChallenge: false });
+    } catch {
+      set({ isLoadingChallenge: false, challengeError: 'Failed to load challenge' });
+    }
+  },
+
   refreshChallenge: async (id) => {
     try {
       const res = await client.get<{ challenge: Challenge }>(`/api/challenges/${id}`);
@@ -98,7 +109,7 @@ export const useChallengeStore = create<ChallengeState & ChallengeActions>()((se
         activeChallenge: state.activeChallenge?.id === id ? updated : state.activeChallenge,
       }));
     } catch {
-      // silent — stale data is acceptable
+      // silent - stale data is acceptable
     }
   },
 }));

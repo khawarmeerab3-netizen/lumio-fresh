@@ -38,7 +38,7 @@ export function MoodProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const bootstrap = async () => {
       try {
-        const token = localStorage.getItem('lumio_token');
+        const token = localStorage.getItem('lumio-token');
         if (!token) {
           // Not logged in — apply default (gold) and continue
           applyMoodToDOM(MOODS[0]);

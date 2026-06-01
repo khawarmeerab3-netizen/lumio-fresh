@@ -49,3 +49,16 @@ export const registerRateLimit = rateLimit({
     message: 'RATE_LIMITED',
   },
 });
+
+/** AI endpoints: 30 requests per 15 minutes per IP */
+export const aiRateLimit = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    data: null,
+    error: 'Too many AI requests — please try again later.',
+    message: 'RATE_LIMITED',
+  },
+});

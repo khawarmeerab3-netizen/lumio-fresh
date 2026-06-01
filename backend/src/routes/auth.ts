@@ -2,11 +2,11 @@ import { Router, Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
-import { supabaseAdmin } from '../utils/supabase';
+import { supabase, supabaseAdmin } from '../utils/supabase';
 import { validate } from '../utils/validate';
 import { env } from '../utils/env';
 import { auth } from '../middleware/auth';
-import { conflict, notFound } from '../utils/errors';
+import { authRequired, conflict, notFound } from '../utils/errors';
 import { loginRateLimit, registerRateLimit } from '../middleware/rate-limit';
 import { sanitizeLabel } from '../utils/sanitize';
 
@@ -44,6 +44,32 @@ function sanitizeUser(user: Record<string, unknown>): Record<string, unknown> {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { password_hash, ...rest } = user as Record<string, unknown>;
   return rest;
+}
+
+/** Ensure public.users row exists for a Supabase Auth user (e.g. created in dashboard). */
+async function ensurePublicUser(
+  authUserId: string,
+  email: string,
+  name: string,
+): Promise<Record<string, unknown>> {
+  const { data: existing } = await supabaseAdmin
+    .from('users')
+    .select('*')
+    .eq('id', authUserId)
+    .maybeSingle();
+
+  if (existing) return existing as Record<string, unknown>;
+
+  const { data: created, error } = await supabaseAdmin
+    .from('users')
+    .insert({ id: authUserId, email, name })
+    .select()
+    .single();
+
+  if (error || !created) {
+    throw authRequired('Invalid email or password');
+  }
+  return created as Record<string, unknown>;
 }
 
 // ─── POST /api/auth/register ─────────────────────────────────────────────────
@@ -122,25 +148,55 @@ authRouter.post(
     try {
       const body = validate(LoginSchema, req.body);
 
-      const { data: user, error } = await supabaseAdmin
+      const { data: row, error: userError } = await supabaseAdmin
         .from('users')
         .select('*')
         .eq('email', body.email)
         .maybeSingle();
 
-      if (error || !user) {
-        throw notFound('Invalid email or password');
+      if (userError) {
+        throw new Error(userError.message);
       }
 
-      const valid = await bcrypt.compare(body.password, user.password_hash as string);
-      if (!valid) {
-        throw notFound('Invalid email or password');
+      let authenticatedUser: Record<string, unknown> | null =
+        (row as Record<string, unknown> | null) ?? null;
+
+      const passwordHash = row?.password_hash as string | undefined;
+
+      if (passwordHash) {
+        const valid = await bcrypt.compare(body.password, passwordHash);
+        if (!valid) {
+          throw authRequired('Invalid email or password');
+        }
+      } else {
+        const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+          email: body.email,
+          password: body.password,
+        });
+
+        if (authError || !authData.user) {
+          throw authRequired('Invalid email or password');
+        }
+
+        const name =
+          (authData.user.user_metadata?.name as string | undefined) ??
+          body.email.split('@')[0];
+
+        if (row && row.id === authData.user.id) {
+          authenticatedUser = row as Record<string, unknown>;
+        } else {
+          authenticatedUser = await ensurePublicUser(authData.user.id, body.email, name);
+        }
       }
 
-      const token = signToken(user.id);
+      if (!authenticatedUser) {
+        throw authRequired('Invalid email or password');
+      }
+
+      const token = signToken(authenticatedUser.id as string);
 
       res.status(200).json({
-        data: { user: sanitizeUser(user), token },
+        data: { user: sanitizeUser(authenticatedUser), token },
         error: null,
         message: 'Welcome back',
       });
@@ -150,6 +206,58 @@ authRouter.post(
   }
 );
 
+// ─── GET/PATCH /api/auth/me (frontend expects this path) ─────────────────────
+
+authRouter.get(
+  '/me',
+  auth,
+  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      res.status(200).json({
+        data: { user: sanitizeUser(req.user as unknown as Record<string, unknown>) },
+        error: null,
+        message: 'OK',
+      });
+    } catch (err) {
+      next(err);
+    }
+  },
+);
+
+authRouter.patch(
+  '/me',
+  auth,
+  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const body = validate(UpdateUserSchema, req.body);
+      if (body.name !== undefined) body.name = sanitizeLabel(body.name);
+      if (body.selected_mood !== undefined) body.selected_mood = sanitizeLabel(body.selected_mood, 50);
+      if (body.selected_language !== undefined) {
+        body.selected_language = sanitizeLabel(body.selected_language, 20);
+      }
+
+      const { data: user, error } = await supabaseAdmin
+        .from('users')
+        .update({ ...body, updated_at: new Date().toISOString() })
+        .eq('id', req.user!.id)
+        .select()
+        .single();
+
+      if (error || !user) {
+        throw new Error(error?.message ?? 'Failed to update user');
+      }
+
+      res.status(200).json({
+        data: { user: sanitizeUser(user) },
+        error: null,
+        message: 'Profile updated',
+      });
+    } catch (err) {
+      next(err);
+    }
+  },
+);
+
 // ─── POST /api/auth/refresh ───────────────────────────────────────────────────
 
 authRouter.post(
@@ -157,7 +265,7 @@ authRouter.post(
   auth,
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const token = signToken(req.user.id);
+      const token = signToken(req.user!.id);
       res.status(200).json({
         data: { token },
         error: null,
@@ -205,7 +313,7 @@ usersRouter.patch(
       const { data: user, error } = await supabaseAdmin
         .from('users')
         .update({ ...body, updated_at: new Date().toISOString() })
-        .eq('id', req.user.id)
+        .eq('id', req.user!.id)
         .select()
         .single();
 
@@ -239,7 +347,7 @@ usersRouter.patch(
       const { error } = await supabaseAdmin
         .from('users')
         .update({ device_token: deviceToken, updated_at: new Date().toISOString() })
-        .eq('id', req.user.id);
+        .eq('id', req.user!.id);
 
       if (error) {
         throw new Error(error.message);

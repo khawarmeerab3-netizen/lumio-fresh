@@ -205,7 +205,7 @@ export const useMoodStore = create<MoodState>((set, get) => ({
     set({ activeMood: found, mood: found });
 
     // Persist to backend (fire-and-forget)
-    const token = typeof window !== 'undefined' ? localStorage.getItem('lumio_token') : null;
+    const token = typeof window !== 'undefined' ? localStorage.getItem('lumio-token') : null;
     if (token) {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? '';
       fetch(`${apiUrl}/api/users/me`, {

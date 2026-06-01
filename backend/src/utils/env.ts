@@ -3,6 +3,15 @@
 // ALL process.env access in backend MUST go through this file.
 // This gives TypeScript strict-mode safety and surfaces missing vars at startup.
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+// Support numbered key variants in local .env files
+process.env.GROQ_API_KEY = process.env.GROQ_API_KEY || process.env.GROQ_API_KEY_1;
+process.env.MISTRAL_API_KEY = process.env.MISTRAL_API_KEY || process.env.MISTRAL_API_KEY_1;
+process.env.ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY_1;
+
 function requireEnv(key: string): string {
   const value = process.env[key];
   if (!value) {
@@ -30,15 +39,15 @@ export const env = {
   // Auth
   JWT_SECRET:                  requireEnv('JWT_SECRET'),
 
-  // AI providers
-  GROQ_API_KEY:                requireEnv('GROQ_API_KEY'),
-  MISTRAL_API_KEY:             requireEnv('MISTRAL_API_KEY'),
-  ANTHROPIC_API_KEY:           requireEnv('ANTHROPIC_API_KEY'),
+  // AI providers (supports GROQ_API_KEY_1 style keys from .env)
+  GROQ_API_KEY:                optionalEnv('GROQ_API_KEY', optionalEnv('GROQ_API_KEY_1')),
+  MISTRAL_API_KEY:             optionalEnv('MISTRAL_API_KEY', optionalEnv('MISTRAL_API_KEY_1')),
+  ANTHROPIC_API_KEY:           optionalEnv('ANTHROPIC_API_KEY', optionalEnv('ANTHROPIC_API_KEY_1')),
 
-  // Payments
-  LEMONSQUEEZY_API_KEY:        requireEnv('LEMONSQUEEZY_API_KEY'),
-  LEMONSQUEEZY_WEBHOOK_SECRET: requireEnv('LEMONSQUEEZY_WEBHOOK_SECRET'),
-  LEMONSQUEEZY_STORE_ID:       requireEnv('LEMONSQUEEZY_STORE_ID'),
+  // Payments (optional in local dev)
+  LEMONSQUEEZY_API_KEY:        optionalEnv('LEMONSQUEEZY_API_KEY', 'dev'),
+  LEMONSQUEEZY_WEBHOOK_SECRET: optionalEnv('LEMONSQUEEZY_WEBHOOK_SECRET', 'dev'),
+  LEMONSQUEEZY_STORE_ID:       optionalEnv('LEMONSQUEEZY_STORE_ID', 'dev'),
 
   // Push notifications
   ONESIGNAL_APP_ID:            requireEnv('ONESIGNAL_APP_ID'),

@@ -77,6 +77,25 @@ export function duplicate(resource = 'Resource'): LumioError {
   return new LumioError(`${resource} already exists`, ErrorCode.DUPLICATE, 409);
 }
 
+/** @alias duplicate */
+export function conflict(message = 'Resource already exists'): LumioError {
+  return new LumioError(message, ErrorCode.DUPLICATE, 409);
+}
+
+export function badRequest(message = 'Invalid request'): LumioError {
+  return new LumioError(message, ErrorCode.VALIDATION_ERROR, 400);
+}
+
+export function toApiError(err: unknown): { message: string; statusCode: number } {
+  if (err instanceof LumioError) {
+    return { message: err.message, statusCode: err.statusCode };
+  }
+  if (err instanceof Error) {
+    return { message: err.message, statusCode: 500 };
+  }
+  return { message: 'Internal server error', statusCode: 500 };
+}
+
 export function internalError(message = 'An unexpected error occurred'): LumioError {
   return new LumioError(message, ErrorCode.INTERNAL_ERROR, 500);
 }

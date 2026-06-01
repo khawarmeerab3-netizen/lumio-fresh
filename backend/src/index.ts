@@ -1,221 +1,114 @@
-// backend/src/index.ts
-// Phase 28: Complete Backend Setup with Sentry Integration
-
+/// <reference path="./lumio.d.ts" />
 import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import dotenv from 'dotenv';
-import * as Sentry from '@sentry/node';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
-
-// Load environment variables
-dotenv.config();
-
-// ═══════════════════════════════════════════════════════════════════════════
-// SENTRY INITIALIZATION - MUST BE FIRST
-// ═══════════════════════════════════════════════════════════════════════════
-
-Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-  environment: process.env.NODE_ENV || 'development',
-  integrations: [
-    new Sentry.Integrations.Http({ tracing: true }),
-    nodeProfilingIntegration(),
-  ],
-  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
-  profilesSampleRate: 0.1,
-  beforeSend(event, hint) {
-    // Filter out non-critical errors
-    if (event.exception) {
-      const error = hint.originalException;
-      // Don't send 404s to Sentry
-      if (error instanceof Error && error.message.includes('404')) {
-        return null;
-      }
-    }
-    return event;
-  },
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// EXPRESS APP SETUP
-// ═══════════════════════════════════════════════════════════════════════════
+import { env } from './utils/env';
+import { isLumioError } from './utils/errors';
+import { generalRateLimit } from './middleware/rate-limit';
+import { authRouter, usersRouter } from './routes/auth';
+import challengesRouter from './routes/challenges';
+import coachesRouter from './routes/coaches';
+import communityRouter from './routes/community';
+import buddiesRouter from './routes/buddies';
+import followersRouter from './routes/followers';
+import personaRouter from './routes/persona';
+import { pointsRouter } from './routes/points';
+import { notificationsRouter } from './routes/notifications';
+import { badgesRouter } from './routes/badges';
+import analyticsRouter from './routes/analytics';
+import adminRouter from './routes/admin';
+import { paymentsRouter } from './routes/payments';
+import { webhooksRouter } from './routes/webhooks';
 
 const app: Express = express();
-const PORT = process.env.PORT || 3000;
+const PORT = env.PORT;
 
-// ═══════════════════════════════════════════════════════════════════════════
-// SENTRY REQUEST HANDLER - MUST BE BEFORE ROUTES
-// ═══════════════════════════════════════════════════════════════════════════
-
-app.use(Sentry.Handlers.requestHandler());
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MIDDLEWARE
-// ═══════════════════════════════════════════════════════════════════════════
-
-// Security
 app.use(helmet());
+const corsOrigins =
+  env.NODE_ENV === 'development'
+    ? ['http://localhost:3000', 'http://localhost:3001', env.FRONTEND_URL].filter(Boolean)
+    : env.FRONTEND_URL || 'http://localhost:3000';
 
-// CORS
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: corsOrigins,
+    credentials: true,
+  }),
+);
 
-// Body parsing
+// Webhooks need raw body — mount before JSON parser
+app.use('/api/webhooks', express.raw({ type: 'application/json' }), webhooksRouter);
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(generalRateLimit);
 
-// ═══════════════════════════════════════════════════════════════════════════
-// HEALTH CHECK
-// ═══════════════════════════════════════════════════════════════════════════
-
-app.get('/health', async (req: Request, res: Response) => {
-  const health = {
+app.get('/health', (_req: Request, res: Response) => {
+  res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
     uptime: Math.floor(process.uptime()),
-  };
-
-  try {
-    // Quick database check
-    // const { error } = await db.from('challenges').select('id').limit(1);
-    // health.db = !error ? 'ok' : 'error';
-
-    // Check AI providers
-    // health.ai = await checkAIHealth();
-
-    const statusCode = health.status === 'ok' ? 200 : 503;
-    return res.status(statusCode).json(health);
-  } catch (err) {
-    return res.status(503).json({
-      status: 'error',
-      timestamp: new Date().toISOString(),
-    });
-  }
+  });
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-// YOUR ROUTES HERE
-// ═══════════════════════════════════════════════════════════════════════════
-
-// Import and mount your routers
-// import challengesRouter from './routes/challenges';
-// import authRouter from './routes/auth';
-// import healthRouter from './routes/health';
-// etc.
-
-// app.use('/api/challenges', challengesRouter);
-// app.use('/api/auth', authRouter);
-// app.use('/health', healthRouter);
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 404 HANDLER
-// ═══════════════════════════════════════════════════════════════════════════
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/challenges', challengesRouter);
+app.use('/api/coaches', coachesRouter);
+app.use('/api/community', communityRouter);
+app.use('/api/buddies', buddiesRouter);
+app.use('/api/followers', followersRouter);
+app.use('/api/persona', personaRouter);
+app.use('/api/points', pointsRouter);
+app.use('/api/notifications', notificationsRouter);
+app.use('/api/badges', badgesRouter);
+app.use('/api/analytics', analyticsRouter);
+app.use('/api/admin', adminRouter);
+app.use('/api/payments', paymentsRouter);
 
 app.use((req: Request, res: Response) => {
   res.status(404).json({
+    data: null,
     error: 'NOT_FOUND',
     message: `Route ${req.method} ${req.path} not found`,
   });
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-// SENTRY ERROR HANDLER - MUST BE AFTER ALL ROUTES
-// ═══════════════════════════════════════════════════════════════════════════
-
-app.use(Sentry.Handlers.errorHandler());
-
-// ═══════════════════════════════════════════════════════════════════════════
-// CUSTOM ERROR HANDLER (Optional, after Sentry)
-// ═══════════════════════════════════════════════════════════════════════════
-
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+app.use((err: unknown, req: Request, res: Response, _next: NextFunction) => {
   const isDevelopment = process.env.NODE_ENV === 'development';
-  const statusCode = err.statusCode || 500;
 
-  // Structured error log
-  console.error(JSON.stringify({
-    timestamp: new Date().toISOString(),
-    level: 'error',
-    event: 'error',
-    code: err.code || 'UNKNOWN_ERROR',
-    message: err.message,
-    statusCode,
-    userId: err.userId || req.user?.id,
-    endpoint: `${req.method} ${req.path}`,
-    stack: isDevelopment ? err.stack : undefined,
-  }));
-
-  // Send response
-  const response: Record<string, any> = {
-    error: isDevelopment ? err.message : 'Internal server error',
-    code: err.code,
-  };
-
-  if (isDevelopment) {
-    response.stack = err.stack;
+  if (isLumioError(err)) {
+    console.error(`[${err.code}] ${err.message} — ${req.method} ${req.path}`);
+    res.status(err.statusCode).json({
+      data: null,
+      error: err.message,
+      message: err.code,
+    });
+    return;
   }
 
-  return res.status(statusCode).json(response);
+  const message = err instanceof Error ? err.message : 'Internal server error';
+  console.error(message, isDevelopment && err instanceof Error ? err.stack : '');
+
+  res.status(500).json({
+    data: null,
+    error: isDevelopment ? message : 'Internal server error',
+    message: 'INTERNAL_ERROR',
+  });
 });
-
-// ═══════════════════════════════════════════════════════════════════════════
-// STRUCTURED LOGGING EXAMPLE
-// ═══════════════════════════════════════════════════════════════════════════
-
-function logEvent(event: string, data: Record<string, any>) {
-  console.log(JSON.stringify({
-    timestamp: new Date().toISOString(),
-    event,
-    ...data,
-  }));
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// SERVER STARTUP
-// ═══════════════════════════════════════════════════════════════════════════
 
 const server = app.listen(PORT, () => {
-  // Log startup event
-  logEvent('startup', {
-    port: PORT,
-    env: process.env.NODE_ENV,
-    version: process.env.APP_VERSION,
-  });
-
-  console.log(`✅ Lumio API running on port ${PORT}`);
-  console.log(`📡 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🔍 Error tracking: ${process.env.SENTRY_DSN ? 'enabled' : 'disabled'}`);
-  console.log(`📊 Structured logging: enabled`);
-  console.log(`❤️  Health check: GET /health`);
+  console.log(`Lumio API running on http://localhost:${PORT}`);
+  console.log(`Environment: ${env.NODE_ENV}`);
+  console.log(`CORS origin: ${env.FRONTEND_URL}`);
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-// GRACEFUL SHUTDOWN
-// ═══════════════════════════════════════════════════════════════════════════
-
 process.on('SIGTERM', () => {
-  logEvent('shutdown', {
-    reason: 'SIGTERM',
-  });
-
-  server.close(() => {
-    console.log('Server closed');
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 process.on('SIGINT', () => {
-  logEvent('shutdown', {
-    reason: 'SIGINT',
-  });
-
-  server.close(() => {
-    console.log('Server closed');
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 export default app;

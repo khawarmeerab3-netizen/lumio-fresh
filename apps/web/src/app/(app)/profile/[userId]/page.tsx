@@ -79,7 +79,7 @@ export default function PublicProfilePage() {
   const [notFound, setNotFound] = useState(false);
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const getHeaders = () => ({ Authorization: `Bearer ${localStorage.getItem('lumio_token')}`, 'Content-Type': 'application/json' });
+  const getHeaders = () => ({ Authorization: `Bearer ${localStorage.getItem('lumio-token')}`, 'Content-Type': 'application/json' });
 
   const fetchProfile = useCallback(async () => {
     if (!userId) return;

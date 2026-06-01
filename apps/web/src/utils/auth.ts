@@ -11,7 +11,7 @@
  * - NEXT_PUBLIC_ env vars must never contain secrets (Vercel exposes them in bundles).
  */
 
-const TOKEN_KEY    = 'lumio:auth-token';
+const TOKEN_KEY    = 'lumio-token';
 const USER_KEY     = 'lumio:user';
 const TASK_KEY     = 'lumio:today-task';       // offline cache
 const VISITS_KEY   = 'lumio:dashboard-visits'; // install prompt

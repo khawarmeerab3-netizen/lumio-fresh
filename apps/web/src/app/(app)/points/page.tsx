@@ -211,11 +211,11 @@ export default function PointsPage() {
   const [copied, setCopied] = useState(false);
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const getHeaders = () => ({ Authorization: `Bearer ${localStorage.getItem('lumio_token')}`, 'Content-Type': 'application/json' });
+  const getHeaders = () => ({ Authorization: `Bearer ${localStorage.getItem('lumio-token')}`, 'Content-Type': 'application/json' });
 
   const fetchData = useCallback(async () => {
     try {
-      const token = localStorage.getItem('lumio_token');
+      const token = localStorage.getItem('lumio-token');
       if (!token) { router.push('/login'); return; }
 
       const [pointsRes, txRes] = await Promise.all([

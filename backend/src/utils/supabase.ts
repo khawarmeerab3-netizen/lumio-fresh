@@ -28,6 +28,11 @@ export const supabaseAdmin: SupabaseClient = createClient(SUPABASE_URL, SUPABASE
 
 // ─── Health check ─────────────────────────────────────────────────────────────
 
+/** Alias used by admin routes */
+export function getAdminSupabase(): SupabaseClient {
+  return supabaseAdmin;
+}
+
 export async function checkSupabaseConnection(): Promise<boolean> {
   try {
     const { error } = await supabaseAdmin.from('users').select('id').limit(1);
