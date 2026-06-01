@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoadingPulse from '@/components/lumio/LoadingPulse';
-import Ring from '@/components/lumio/Ring';
+import { Ring } from '@/components/lumio/Ring';
 
 interface DailyReport {
   greeting: string;
@@ -151,11 +151,13 @@ export default function ReportPage() {
       >
         <div className="relative flex items-center justify-center">
           <Ring
+            done={animatedScore}
+            total={10}
             size={110}
-            stroke={7}
-            percent={scorePercent}
-            color="var(--color-accent)"
-            trackColor="var(--color-border2)"
+            strokeWidth={7}
+            accent="var(--color-accent)"
+            bg="var(--color-border2)"
+            textColor="var(--color-accent)"
           />
           <div
             className="absolute inset-0 flex flex-col items-center justify-center"

@@ -4,8 +4,8 @@
 // User picks their mood → adaptive task version is served.
 
 import React, { useState } from 'react';
-import type { DailyMoodState } from '../../../../shared/types/persona';
-import { useCurrentMood } from '../../stores/mood';
+import type { DailyMoodState } from '@/shared/types/persona';
+import { useMoodStore } from '@/stores/mood-store';
 
 // ─── Mood option config ───────────────────────────────────────────────────────
 
@@ -72,7 +72,7 @@ export function MoodCheckIn({
   onComplete,
   alreadyCheckedIn,
 }: MoodCheckInProps) {
-  const currentMood                   = useCurrentMood();
+  const { activeMood }                = useMoodStore();
   const [selected, setSelected]       = useState<DailyMoodState | null>(null);
   const [loading, setLoading]         = useState(false);
   const [hovered, setHovered]         = useState<DailyMoodState | null>(null);
@@ -109,7 +109,7 @@ export function MoodCheckIn({
             fontFamily: 'var(--font-display)',
             fontSize: '1.4rem',
             fontWeight: 800,
-            color: option?.color ?? currentMood.accent,
+            color: option?.color ?? activeMood.accent,
           }}
         >
           {option?.label}
@@ -119,7 +119,7 @@ export function MoodCheckIn({
           style={{
             marginTop: '0.5rem',
             padding: '0.8rem 2rem',
-            background: currentMood.g,
+            background: activeMood.g,
             border: 'none',
             color: '#0a0905',
             fontFamily: 'var(--font-display)',
@@ -305,7 +305,7 @@ export function MoodCheckIn({
         disabled={!selected || loading}
         style={{
           padding:    '1rem',
-          background: selected ? currentMood.g : 'var(--lumio-border2)',
+          background: selected ? activeMood.g : 'var(--lumio-border2)',
           border:     'none',
           color:      selected ? '#0a0905' : 'var(--lumio-text3)',
           fontFamily: 'var(--font-display)',

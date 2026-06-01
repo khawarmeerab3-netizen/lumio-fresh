@@ -4,8 +4,8 @@
 // Phase 1-3 on Day 0. Phase 4-7 woven into daily check-ins over first week.
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import type { DailyMoodState } from '../../../../shared/types/persona';
-import { useCurrentMood } from '../../stores/mood';
+import type { DailyMoodState } from '@/shared/types/persona';
+import { useMoodStore } from '@/stores/mood-store';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -40,7 +40,7 @@ export function PersonaChat({
   preferredName,
   compact = false,
 }: PersonaChatProps) {
-  const currentMood                     = useCurrentMood();
+  const { activeMood }                = useMoodStore();
   const [messages, setMessages]         = useState<Message[]>([]);
   const [input, setInput]               = useState('');
   const [loading, setLoading]           = useState(false);
@@ -229,7 +229,7 @@ export function PersonaChat({
             <div
               style={{
                 height:     '100%',
-                background: currentMood.g,
+                background: activeMood.g,
                 width:      `${Math.min((currentPhase / 3) * 100, 100)}%`,
                 transition: 'width 0.6s ease',
               }}
@@ -284,7 +284,7 @@ export function PersonaChat({
                 maxWidth:   '80%',
                 fontSize:   '0.92rem',
                 lineHeight: 1.55,
-                background: msg.role === 'user' ? currentMood.g : 'var(--lumio-bg3)',
+                background: msg.role === 'user' ? activeMood.g : 'var(--lumio-bg3)',
                 border:     msg.role === 'user' ? 'none' : '1px solid var(--lumio-border2)',
                 color:      msg.role === 'user' ? '#0a0905' : 'var(--lumio-text)',
                 whiteSpace: 'pre-wrap',
@@ -377,7 +377,7 @@ export function PersonaChat({
           onClick={handleSend}
           disabled={loading || !input.trim()}
           style={{
-            background:  currentMood.accent,
+            background:  activeMood.accent,
             border:      'none',
             color:       '#0a0905',
             padding:     '0 1.3rem',

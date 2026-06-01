@@ -5,9 +5,8 @@ import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useChallengeStore } from "@/stores/challengeStore";
 import { useMoodStore } from "@/stores/moodStore";
-import { MOODS } from "@/shared/constants/moods";
 import { MilestonePopup } from "@/components/lumio/MilestonePopup";
-import type { DailyTask, MilestoneReached } from "@/shared/types";
+import type { DailyTask } from "@/shared/types";
 
 // ─── skeleton ────────────────────────────────────────────────────────────────
 function Skeleton({
@@ -32,16 +31,15 @@ function Skeleton({
 // ─── main ─────────────────────────────────────────────────────────────────────
 export default function TodayPage() {
   const params = useParams<{ id: string }>();
-  const { selectedMood } = useMoodStore();
-  const { activeChallenge, updateChallengeInStore } = useChallengeStore();
-  const mood = MOODS.find((m) => m.id === selectedMood) ?? MOODS[0];
+  const { activeMood: mood } = useMoodStore();
+  const { activeChallenge, setActive } = useChallengeStore();
 
   const [task, setTask] = useState<DailyTask | null>(null);
   const [loading, setLoading] = useState(true);
   const [reflection, setReflection] = useState("");
   const [completing, setCompleting] = useState(false);
   const [completed, setCompleted] = useState(false);
-  const [milestone, setMilestone] = useState<MilestoneReached | null>(null);
+  const [milestone, setMilestone] = useState(null);
   const [error, setError] = useState<string | null>(null);
 
   // ── fetch today's task ──────────────────────────────────────────────────────
@@ -82,7 +80,7 @@ export default function TodayPage() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Could not complete day");
       setCompleted(true);
-      if (json.data?.challenge) updateChallengeInStore(json.data.challenge);
+      if (json.data?.challenge) setActive(json.data.challenge);
       if (json.data?.milestoneReached) setMilestone(json.data.milestoneReached);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Unknown error");
@@ -92,7 +90,7 @@ export default function TodayPage() {
   }
 
   // ── helpers ──────────────────────────────────────────────────────────────────
-  const taskData = task?.task_data;
+  const taskData = task;
 
   // ── loading skeleton ─────────────────────────────────────────────────────────
   if (loading) {
@@ -143,7 +141,7 @@ export default function TodayPage() {
               fontFamily: "var(--font-syne, Syne, sans-serif)",
             }}
           >
-            {taskData?.dayTitle ?? `Day ${task?.day_number}`}
+            {taskData?.dayTitle ?? 'Today\'s Task'}
           </h1>
           {taskData?.timeRequired && (
             <span
@@ -182,7 +180,7 @@ export default function TodayPage() {
               lineHeight: 1.6,
             }}
           >
-            {taskData?.task ?? "Your personalized task will appear here."}
+            {taskData?.mainTask ?? "Your personalized task will appear here."}
           </p>
         </div>
 
@@ -247,7 +245,7 @@ export default function TodayPage() {
           >
             REFLECTION
           </p>
-          {taskData?.coachQuestion && (
+          {taskData?.checkIn && (
             <p
               className="text-sm mb-3 italic"
               style={{
@@ -255,7 +253,7 @@ export default function TodayPage() {
                 fontFamily: "var(--font-lora, Lora, Georgia, serif)",
               }}
             >
-              {taskData.coachQuestion}
+              {taskData.checkIn}
             </p>
           )}
           <textarea

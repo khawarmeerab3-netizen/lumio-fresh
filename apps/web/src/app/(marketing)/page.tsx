@@ -73,7 +73,7 @@ const STEPS = [
 
 // ─── COMPONENTS ─────────────────────────────────────────────────────────────
 
-function GradientText({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function GradientText({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
     <span
       className={className}
@@ -82,6 +82,7 @@ function GradientText({ children, className = '' }: { children: React.ReactNode;
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
+        ...style,
       }}
     >
       {children}

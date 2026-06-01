@@ -169,7 +169,7 @@ export default function CreateReelPage() {
     try {
       // ── 1. Lazy-load FFmpeg.wasm ────────────────────────────────────────
       // Dynamic import keeps the 30 MB WASM binary out of the initial bundle.
-      const { FFmpeg } = await import('@ffmpeg/ffmpeg') as {
+      const { FFmpeg } = await import('@ffmpeg/ffmpeg') as unknown as {
         FFmpeg: new () => {
           on: (event: string, cb: (data: { progress: number }) => void) => void;
           load: (opts: { coreURL: string; wasmURL: string }) => Promise<void>;
@@ -204,7 +204,7 @@ export default function CreateReelPage() {
       }
 
       // Convenience alias with the type we know it has
-      const ff = ffmpegRef.current as Awaited<ReturnType<typeof import('@ffmpeg/ffmpeg').FFmpeg extends new () => infer T ? new () => T : never>>;
+      const ff = ffmpegRef.current as any;
 
       // ── 2. Load all media from IndexedDB ───────────────────────────────
       setStage('reading-media');
@@ -336,7 +336,7 @@ export default function CreateReelPage() {
       setProgress(STAGE_INFO['finalising'].pct);
 
       const outputData = await (ff as unknown as { readFile: (n: string) => Promise<Uint8Array> }).readFile('output.mp4');
-      const blob = new Blob([outputData], { type: 'video/mp4' });
+      const blob = new Blob([outputData as any], { type: 'video/mp4' });
       const url = URL.createObjectURL(blob);
 
       setReelBlob(blob);

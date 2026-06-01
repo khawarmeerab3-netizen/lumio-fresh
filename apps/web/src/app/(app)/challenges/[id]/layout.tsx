@@ -9,7 +9,6 @@ import { useAuthStore } from "@/stores/authStore";
 import { useMoodStore } from "@/stores/moodStore";
 import MoodFAB from "@/components/lumio/MoodFAB";
 import { Ring } from "@/components/lumio/Ring";
-import { MOODS } from "@/shared/constants/moods";
 
 const TABS = [
   { key: "today",     label: "Today",     emoji: "🎯", path: "today"     },
@@ -28,15 +27,13 @@ export default function ChallengeLayout({
   const router = useRouter();
   const pathname = usePathname();
   const { user } = useAuthStore();
-  const { activeMood } = useMoodStore();
+  const { activeMood: mood } = useMoodStore();
   const {
     activeChallenge,
     loadChallenge,
     isLoadingChallenge,
     challengeError,
   } = useChallengeStore();
-
-  const mood = MOODS.find((m) => m.id === activeMood) ?? MOODS[0];
 
   useEffect(() => {
     if (params.id) {

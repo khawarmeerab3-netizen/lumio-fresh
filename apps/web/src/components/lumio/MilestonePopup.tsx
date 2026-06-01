@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import type { MoodTheme } from "@/shared/types";
+import type { MoodDef } from "@/stores/mood-store";
 
 interface MilestoneReached {
   label: string;
@@ -12,7 +12,7 @@ interface MilestoneReached {
 
 interface Props {
   milestone: MilestoneReached;
-  mood: MoodTheme;
+  mood: MoodDef;
   onClose: () => void;
 }
 
